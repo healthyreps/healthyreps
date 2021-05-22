@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" content="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" typ="text/css" href="../css/calculator.css">
+	<title>Fitness Calculator</title>
+</head>
+<body>
+	<form>
+		<h3>Personal Details</h3>
+		<div>
+			<span>Age...........................</span>
+			<input type="text" class="txt-pd" id="age">
+
+			<span>
+				<input type="radio" name="radio"><p style="display: inline-block;">Female</p>
+				<input type="radio" name="radio"><p style="display: inline-block;">Male</p>
+			</span>
+		</div>
+		<div>
+			<span>Weight......................
+				<input type="text" class="txt-pd">
+			</span>
+			<span>Height
+				<input type="text" class="txt-pd">
+			</span>
+			<br>
+			<br>
+			<span>Waist-circumference
+				<input type="text" class="txt-pd" >
+			</span>
+		</div>
+		<input type="button" value="Calculate" id="displayButton">
+		<hr>
+		<h3>Results</h3>
+		<div>
+			<div id="sub-head"> Body Mass</div>
+			<p>BMI  index.
+			<input type="text" class="txt-pd">
+			<span>Body fat... </span>
+			<input type="text" class="txt-pd"></p>
+			<p>BMI (min).
+			<input type="text" class="txt-pd">
+			<span>Fat Mass... </span>
+			<input type="text" class="txt-pd"></p>
+			<p>BMI (max)
+			<input type="text" class="txt-pd">
+			<span>Lean Mass </span>
+			<input type="text" class="txt-pd"></p>
+			<span>Waist to height ratio..................................................... </span>
+			<input type="text" class="txt-pd">
+		</div>
+		<br>
+		<div>
+			<div id="sub-head"> Daily Calories</div>
+			<p> RMR..............................
+			<input type="text" class="txt-pd">
+			<span>Calories Needed </span>
+			<input type="text" class="txt-pd"></p>
+			<p>Calorie Goal..................
+			<input type="text" class="txt-pd">
+			<span>Calories to Burn</span>
+			<input type="text" class="txt-pd"></p>
+		</div>
+		<div>
+			<div id="sub-head"> Daily Diet Breakdown</div>
+			<p> Protein(kcal)
+			<input type="text" class="txt-pd">
+			<p>Carbs(kcal).. </span>
+			<input type="text" class="txt-pd"></p>
+			<p>Fats(kcal)....
+			<input type="text" class="txt-pd">
+			<span>Calories intake</span>
+			<input type="text" class="txt-pd"></p>
+		</div>
+		<div>
+			<div id="sub-head">Heart Rate</div>
+			<p> Beats per Interval (High).......
+			<input type="text" class="txt-pd">
+			<p> Beats per Interval (Low).......</span>
+			<input type="text" class="txt-pd"></p>
+			<p>Maximum Beats per Interval
+			<input type="text" class="txt-pd"></p>
+		</div>
+		
+	</form>
+</body>
+</html>

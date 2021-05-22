@@ -1,0 +1,71 @@
+.container{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* padding-bottom: 50px;
+    padding-top: 20px; */
+}
+
+.tabs{
+    color:blue;
+    font-weight: 900;
+}
+  
+#main{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding-bottom: 10%;
+    background-color:#fff;
+}
+
+.form{
+    margin-left: 31%;
+}
+
+
+h1{
+    text-align: center;
+    color: blue;
+}
+
+.v1{
+    float: left;
+    width: 25%;
+    margin-top: 10px;
+}
+
+.v2{
+    float: left;
+    width: 85%;
+    margin-top: 10px;
+}
+
+.submit-btn{
+    color: blue;
+    margin-left: 17%;
+    margin-top: 20px;
+    font-weight: 900;
+}
+
+button:hover{
+    color: crimson;
+}
+
+body{   
+    background-color:#38A5DB;
+}
+
+@media only screen and (max-width: 1300px) {
+    .v1, .v2, input[type=submit] {
+      width: 100%;
+      margin-top: 10px;
+    }
+    #main{
+        border-radius: 5px;
+        border: solid black 1px;
+        padding-bottom: 30%;
+        background-color:#fff;
+    }
+  }
+  

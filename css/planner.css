@@ -1,0 +1,261 @@
+.planner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 75%;
+}
+.displayForm {
+  position: absolute;
+  margin-left: 1%;
+  margin-top: 1%;
+  width: 20%;
+  height: 5%;
+  padding-inline-start: 1em;
+}
+.displayForm li {
+  display: inline;
+  width: 50%;
+}
+.displayButton {
+  width: 25%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a.displayButton:link,
+a.displayForm:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a.displayButton:hover,
+a.displayButton:active {
+  background-color: black;
+  color: white;
+}
+.user {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  font: 1.2em sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  text-align: end;
+  margin-top: 2.5%;
+  margin-right: 2%;
+}
+#addData {
+  margin-left: 10%;
+  max-width: 70%;
+  display: none;
+}
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: black;
+}
+caption {
+  font: 2em sans-serif;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+div h3 {
+  font: 1.7em sans-serif;
+  font-weight: bold;
+  margin-top: 10%;
+}
+div p {
+  width: fit-content;
+  font: 1.1em sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: 5%;
+}
+
+div input[type="text"],
+textarea {
+  font: 1em sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  text-overflow: clip;
+  border-style: inset;
+  border-width: 2px;
+  overflow: auto;
+}
+div input[type="submit"] {
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  font: 1em sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 20%;
+  margin-top: 5%;
+}
+th {
+  padding: 1%;
+  font: 1.1em sans-serif;
+}
+td {
+  padding: 1%;
+  font: 1em sans-serif;
+  font-style: italic;
+  font-weight: 750;
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+  font-weight: 100;
+  font-size: 12px;
+}
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {
+    width: 8.33%;
+    font-weight: 100;
+    font-size: 14px;
+  }
+  .col-s-2 {
+    width: 16.66%;
+    font-weight: 200;
+    font-size: 15px;
+  }
+  .col-s-3 {
+    width: 25%;
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .col-s-4 {
+    width: 33.33%;
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .col-s-5 {
+    width: 41.66%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-6 {
+    width: 50%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-7 {
+    width: 58.33%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-8 {
+    width: 66.66%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-9 {
+    width: 75%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-10 {
+    width: 83.33%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-11 {
+    width: 91.66%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-12 {
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+    font-weight: 300;
+    font-size: 20px;
+  }
+  .col-2 {
+    width: 16.66%;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .col-3 {
+    width: 25%;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .col-4 {
+    width: 33.33%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-5 {
+    width: 41.66%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-6 {
+    width: 50%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-7 {
+    width: 58.33%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-8 {
+    width: 66.66%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-9 {
+    width: 75%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-10 {
+    width: 83.33%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-11 {
+    width: 91.66%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-12 {
+    width: 100%;
+    font-weight: 700;
+    font-size: 18px;
+  }
+}

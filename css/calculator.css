@@ -1,0 +1,54 @@
+#displayButton{
+	border-radius: 20px;
+	width: 100px;
+	height: 5vh;
+	font-size: 15px;
+	background-color: #f1f2f3;
+	position: center;
+	margin-top: 10px;
+}
+#displayButton:hover{
+	background-color: #1f1f1f;
+	color:whitesmoke;
+}
+h3{
+	font-family: verdana;
+	font-size: 25px;
+	margin: 0px;
+}
+#sub-head{
+	font-family: verdana;
+	font-style: bold;
+	font-size: 2vw;
+}
+div{
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.txt-pd{
+	margin-right: 100px;
+	width:10%;
+	height:15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .txt-pd{
+      height:10px; 
+      margin-right:800px;
+      font-size: 
+    }
+    div{
+	font-size: 15px;
+	margin-left: 0px;
+	}
+	h3{
+		font-size: 20px;
+	}
+	#displayButton{
+	width: 100px;
+	font-size: 15px;
+	margin-top: 5px;
+	}
+    
+  }
