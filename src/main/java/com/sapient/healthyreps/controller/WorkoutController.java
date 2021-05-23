@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,5 +33,10 @@ public class WorkoutController {
 	public Workout getWork(@PathVariable int user_id) {
 		return workoutdao.getSetsReps(user_id);
 
+	}
+
+	@PutMapping("/workout/{user_id}")
+	public boolean updateWork(@RequestBody Workout workout, @PathVariable int user_id) {
+		return workoutdao.updateWork(workout, user_id);
 	}
 }

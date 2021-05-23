@@ -2,7 +2,7 @@ package com.sapient.healthyreps.interfaces;
 
 import com.sapient.healthyreps.entity.Planner;
 
-public interface IPlannerDao {
+public interface IPlannerDAO {
 	public boolean insertPlanner(Planner planner);
 
 	public boolean deletePlanner(int user_id);

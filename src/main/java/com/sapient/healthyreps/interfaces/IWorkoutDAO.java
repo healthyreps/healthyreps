@@ -8,5 +8,7 @@ public interface IWorkoutDAO {
 	public boolean deleteWork(int user_id);
 
 	public Workout getSetsReps(int user_id);
+	
+	public boolean updateWork(Workout workout, int user_id);
 
 }

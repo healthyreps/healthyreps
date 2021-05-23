@@ -7,14 +7,14 @@ import java.sql.SQLException;
 import org.springframework.stereotype.Service;
 
 import com.sapient.healthyreps.entity.Planner;
-import com.sapient.healthyreps.interfaces.IPlannerDao;
+import com.sapient.healthyreps.interfaces.IPlannerDAO;
 import com.sapient.healthyreps.utils.DbConnect;
 
 @Service
-public class PlannerDao implements IPlannerDao {
+public class PlannerDAO implements IPlannerDAO {
 	@Override
 	public boolean insertPlanner(Planner planner) {
-		String q = "INSERT into Planner values(?,?,?,?,?,?);";
+		String q = "insert into planner values(?,?,?,?,?,?);";
 		try {
 			PreparedStatement prep = DbConnect.getMySQLConn().prepareStatement(q);
 			prep.setInt(1, planner.getUser_id());
@@ -24,14 +24,15 @@ public class PlannerDao implements IPlannerDao {
 			prep.setString(5, planner.getDiet_goal());
 			prep.setString(6, planner.getDate());
 			return prep.executeUpdate() > 0;
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
+
 	@Override
 	public boolean deletePlanner(int user_id) {
-		String sql = "DELETE from Planner where user_id=?";
+		String sql = "delete from planner where userId=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -44,10 +45,11 @@ public class PlannerDao implements IPlannerDao {
 
 		return false;
 	}
+
 	@Override
 	public Planner getPlanner(int user_id) {
 
-		String sql = "SELECT * from Planner where user_id=?";
+		String sql = "select * from planner where userId=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -75,28 +77,27 @@ public class PlannerDao implements IPlannerDao {
 
 	@Override
 	public boolean updateExercise_perform(String exercise_perform, int user_id) {
-		String q = "UPDATE Planner SET exercise_perform=?"
-				+ " WHERE user_id = ?;";
+		String q = "update planner set exercisePerform=?" + " where userId = ?;";
 		try {
 			PreparedStatement prep = DbConnect.getMySQLConn().prepareStatement(q);
 			prep.setInt(2, user_id);
 			prep.setString(1, exercise_perform);
 			return prep.executeUpdate() > 0;
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
+
 	@Override
 	public boolean updateDiet_goal(String diet_goal, int user_id) {
-		String q = "UPDATE Planner SET diet_goal=?"
-				+ " WHERE user_id = ?;";
+		String q = "update planner set dietGoal=?" + " where userId = ?;";
 		try {
 			PreparedStatement prep = DbConnect.getMySQLConn().prepareStatement(q);
 			prep.setInt(2, user_id);
 			prep.setString(1, diet_goal);
 			return prep.executeUpdate() > 0;
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;

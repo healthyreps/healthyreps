@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sapient.healthyreps.dao.UserBioDao;
+import com.sapient.healthyreps.dao.UserBioDAO;
 import com.sapient.healthyreps.entity.UserBio;
 
 @RestController
 public class UserBioController {
 	@Autowired
-	UserBioDao userBioDao;
+	UserBioDAO userBioDao;
 
 
 	@PostMapping("/userBio")

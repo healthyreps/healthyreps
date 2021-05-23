@@ -15,7 +15,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 
 	@Override
 	public boolean insertWork(Workout workout) {
-		String sql = "insert into workout_table values(?,?,?,?,?,?,?)";
+		String sql = "insert into workouttime values(?,?,?,?,?,?,?)";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -37,7 +37,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 
 	@Override
 	public boolean deleteWork(int userid) {
-		String sql = "delete from Workout_table where user_id=?";
+		String sql = "delete from workouttime where userId=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -54,7 +54,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 	@Override
 	public Workout getSetsReps(int userid) {
 
-		String sql = "select sets, reps_set from workout_table where user_id=?";
+		String sql = "select sets, repsSet from workouttime where userId=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -72,6 +72,25 @@ public class WorkoutDAO implements IWorkoutDAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public boolean updateWork(Workout workout, int userId) {
+		String q = "update  workouttime set day = ? ,time = ? ,sets = ? ,repsSet = ? , description = ? where userId = ? ";
+		try {
+			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(q);
+
+			ps.setInt(1, workout.getDay());
+			ps.setString(2, workout.getTime());
+			ps.setInt(3, workout.getSets());
+			ps.setInt(4, workout.getReps_per_set());
+			ps.setString(5, workout.getDescription());
+			ps.setInt(6, workout.getUserId());
+			return ps.executeUpdate() > 0;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }

@@ -7,6 +7,7 @@ public class UserBio {
 	private String gender;
 	private int waist;
 	private int workout_plan_in_days;
+	private int reputation;
 
 	public int getUser_id() {
 		return userID;
@@ -14,6 +15,14 @@ public class UserBio {
 
 	public void setUser_id(int user_id) {
 		this.userID = user_id;
+	}
+
+	public int getReputation() {
+		return reputation;
+	}
+
+	public void setReputation(int reputation) {
+		this.reputation = reputation;
 	}
 
 	public int getWeight() {
@@ -74,9 +83,8 @@ public class UserBio {
 	@Override
 	public String toString() {
 		return "user [user_id=" + userID + ", weight=" + weight + ", height=" + height + ", gender=" + gender
-				+ ", waist=" + waist + ", workout_plan=" + workout_plan_in_days + "]";
+				+ ", waist=" + waist + ", workout_plan=" + workout_plan_in_days + "," + "reputation=" + reputation
+				+ "]";
 	}
-
-	
 
 }
