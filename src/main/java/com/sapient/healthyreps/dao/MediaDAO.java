@@ -10,13 +10,13 @@ import com.sapient.healthyreps.utils.DbConnect;
 public class MediaDAO implements IMediaDAO{
 
 	@Override
-	public boolean createMedia(int pid, String link) {
-		String sql = "INSERT INTO Media_post(link, PID) VALUES (?,?)";
+	public boolean createMedia(int postId, String link) {
+		String sql = "insert into Media_post(link, postId) values (?,?)";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
 			
 			ps.setString(1, link);
-			ps.setInt(2, pid);
+			ps.setInt(2, postId);
 			
 			return ps.executeUpdate() > 0;
 		} catch (SQLException e) {
@@ -27,12 +27,12 @@ public class MediaDAO implements IMediaDAO{
 	}
 
 	@Override
-	public String getMediaByPostId(int pid) {
+	public String getMediaByPostId(int postId) {
 		String post_media="";
-		String sql = "Select link From Media_post where PID=?";
+		String sql = "select link from Media_post where postId=?";
 		try {
 				PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
-				ps.setInt(1, pid);
+				ps.setInt(1, postId);
 				ResultSet rs = ps.executeQuery();	
 				while(rs.next()) {		
 						post_media = new String(rs.getString(1));
@@ -46,12 +46,12 @@ public class MediaDAO implements IMediaDAO{
 	}
 	
 	@Override
-	public boolean deleteMediaByPostId(int pid)
+	public boolean deleteMediaByPostId(int postId)
 	{
-		String sql = "DELETE FROM Media_post WHERE PID = ?";
+		String sql = "delete from Media_post where postId = ?";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
-			ps.setInt(1, pid);
+			ps.setInt(1, postId);
 			
 			return ps.executeUpdate() > 0;
 		} catch (SQLException e) {
@@ -62,14 +62,14 @@ public class MediaDAO implements IMediaDAO{
 	}
 	
 	@Override
-	public boolean updateMediaByPostId(int pid, String link) {
+	public boolean updateMediaByPostId(int postId, String link) {
 		
-		String sql = "UPDATE Media_post SET link=? WHERE PID=?";
+		String sql = "update Media_post set link=? where postId=?";
 		
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
 			ps.setString(1, link);
-			ps.setInt(2, pid);
+			ps.setInt(2, postId);
 			
 			return ps.executeUpdate() > 0;
 			

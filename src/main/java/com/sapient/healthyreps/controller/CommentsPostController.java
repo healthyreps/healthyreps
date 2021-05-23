@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/CommentsPost")
-public class Comments_postController {
+public class CommentsPostController {
 
 	
-	ICommentsPostDAO Comments_postDAO = new CommentsPostDAO();
+	ICommentsPostDAO CommentsPostDAO = new CommentsPostDAO();
 	
 	@GetMapping
 	public String generalPage() {

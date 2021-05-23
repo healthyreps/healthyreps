@@ -4,7 +4,7 @@ public class Media {
 
 	
 	private int id;
-	private int pid;
+	private int postId;
 	private String link;
 	
 	
@@ -14,10 +14,10 @@ public class Media {
 	}
 
 
-	public Media(int id, int pid, String link) {
+	public Media(int id, int postId, String link) {
 		super();
 		this.id = id;
-		this.pid = pid;
+		this.postId = postId;
 		this.link = link;
 	}
 
@@ -32,13 +32,13 @@ public class Media {
 	}
 
 
-	public int getPid() {
-		return pid;
+	public int getpostId() {
+		return postId;
 	}
 
 
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setpostId(int postId) {
+		this.postId = postId;
 	}
 
 
@@ -54,7 +54,7 @@ public class Media {
 
 	@Override
 	public String toString() {
-		return "Media [id=" + id + ", pid=" + pid + ", link=" + link + "]";
+		return "Media [id=" + id + ", postId=" + postId + ", link=" + link + "]";
 	}
 	
 	

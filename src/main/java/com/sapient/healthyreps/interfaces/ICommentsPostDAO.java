@@ -6,7 +6,7 @@ import java.util.List;
 import com.sapient.healthyreps.entity.CommentsPost;
 import com.sapient.healthyreps.exception.InvalidId;
 
-public interface IComments_postDAO {
+public interface ICommentsPostDAO {
 
 	public void checkCommentId (int comid) throws InvalidId;
 	public boolean insertComment(int comid, int votes, String content, int pid, int uid, Timestamp timestamp, int reported);

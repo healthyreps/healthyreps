@@ -3,39 +3,39 @@ package com.sapient.healthyreps.interfaces;
 import java.sql.Timestamp;
 import java.util.List;
 
-import com.sapient.healthyreps.entity.Post;
+import com.sapient.healthyreps.entity.post;
 
 public interface IPostDAO {
 
-	public boolean insertPost(int pid, int uid, String title, int categoryId, String content, int votes, Timestamp timestamp, int reported);
-	public boolean insertPost(int uid, String title, int categoryId, String content, int votes, Timestamp timestamp, int reported);
+	public boolean insertpost(int postId, int userId, String title, int categoryId, String content, int votes, Timestamp timestamp, int reported);
+	public boolean insertpost(int userId, String title, int categoryId, String content, int votes, Timestamp timestamp, int reported);
 	
 	//added today
-	public boolean insertPost(Post post);
+	public boolean insertpost(post post);
 	
-	public List<Post> getAllPosts();
-	public boolean deletePostbyId(int pid);
-	public boolean updatePost(int pid,String title, String content,  int categoryId, int votes, Timestamp timestamp, int reported);
+	public List<post> getAllposts();
+	public boolean deletepostbyId(int postId);
+	public boolean updatepost(int postId,String title, String content,  int categoryId, int votes, Timestamp timestamp, int reported);
 	
 	//added today
-	public boolean updatePost(Post post);
-	public Post getPostbyId(int pid);
+	public boolean updatepost(post post);
+	public post getpostbyId(int postId);
 	
-	public boolean updateVoteCountbyId(int pid, int votes);
+	public boolean updateVoteCountbyId(int postId, int votes);
 	
-	public List<Post> getAllPostsByCategoryId(int categoryId);
+	public List<post> getAllpostsByCategoryId(int categoryId);
 	
 	
 //	public HashMap<Integer,HashMap<String,String>> getinBrief();
 	
-	public List<Post> getAllPostbyUserId(int pid);
+	public List<post> getAllpostbyuserId(int postId);
 	
-	public List<Post> getAllVisiblePosts();
+	public List<post> getAllVisibleposts();
 	
-	public boolean updateStatusofPost(int pid,int newstatus);
+	public boolean updateStatusofpost(int postId,int newstatus);
 	
-	public List<Post> getAllDraftPosts(int uid);
+	public List<post> getAllDraftposts(int userId);
 	
-	public List<Post> getAllReportedPosts();
+	public List<post> getAllReportedposts();
 	
 }

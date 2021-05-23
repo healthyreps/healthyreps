@@ -2,11 +2,11 @@ package com.sapient.healthyreps.entity;
 
 import java.sql.Timestamp;
 
-public class Post {
+public class post {
 
 	
-	private int pid;
-	private int uid;
+	private int postId;
+	private int userId;
 	private String title;
 	private String content;
 	private int categoryId;
@@ -15,14 +15,14 @@ public class Post {
 	private int reported;
 	
 	
-	public Post() {}
+	public post() {}
 	
 	
-	public Post(int pid, int uid, String title, int categoryId, String content,int votes, Timestamp timeStamp,
+	public post(int postId, int userId, String title, int categoryId, String content,int votes, Timestamp timeStamp,
 			int reported) {
 		super();
-		this.pid = pid;
-		this.uid = uid;
+		this.postId = postId;
+		this.userId = userId;
 		this.title = title;
 		this.content = content;
 		this.categoryId = categoryId;
@@ -33,17 +33,17 @@ public class Post {
 
 
 
-	public int getPid() {
-		return pid;
+	public int getpostId() {
+		return postId;
 	}
-	public void setPid(int pid) {
-		this.pid = pid;
+	public void setpostId(int postId) {
+		this.postId = postId;
 	}
-	public int getUid() {
-		return uid;
+	public int getuserId() {
+		return userId;
 	}
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setuserId(int userId) {
+		this.userId = userId;
 	}
 	public String getTitle() {
 		return title;
@@ -89,7 +89,7 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "Post [pid=" + pid + ", uid=" + uid + ", title=" + title + ", content=" + content + ", categoryId="
+		return "post [postId=" + postId + ", userId=" + userId + ", title=" + title + ", content=" + content + ", categoryId="
 				+ categoryId + ", votes=" + votes + ", timeStamp=" + timestamp + ", reported=" + reported + "]";
 	}
 	

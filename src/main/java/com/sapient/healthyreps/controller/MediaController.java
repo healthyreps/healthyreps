@@ -20,20 +20,20 @@ public class MediaController {
 	}
 	
 	@GetMapping("{pid}")
-	public String getMediabyPostId(@PathVariable int pid) {
+	public String getMediaByPostId(@PathVariable int pid) {
 		
 		return mediaDAO.getMediaByPostId(pid);
 	}
 	@DeleteMapping("/delete/{pid}")
 	public String deleteMediaByPostId(@PathVariable int pid) {
 		return mediaDAO.deleteMediaByPostId(pid)
-				?"Deleted":"Not Deleted";
+				?"deleted":"Not deleted";
 	}
 
    @PutMapping("/update/{pid}/{link}")
    public String updateMediaByPostId(@PathVariable int pid, String link) {
 	     return mediaDAO.updateMediaByPostId(pid,link)
-			     ?"Updated":"Not Updated";
+			     ?"updated":"Not updated";
 }
 	
 }

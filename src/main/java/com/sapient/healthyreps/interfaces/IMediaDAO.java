@@ -8,14 +8,14 @@ public interface IMediaDAO {
 
 	
 	    //public List<Media> getAllMedia();
-		public boolean createMedia(int pid, String link);
+		public boolean createMedia(int postId, String link);
 		
-		public String getMediaByPostId(int pid);
+		public String getMediaByPostId(int postId);
 		
-		public boolean updateMediaByPostId(int pid, String link);
+		public boolean updateMediaByPostId(int postId, String link);
 		
-		public boolean deleteMediaByPostId(int pid);
+		public boolean deleteMediaByPostId(int postId);
 		
-		//public boolean deleteAllMediaByPostId(int pid);
+		//public boolean deleteAllMediaBypostId(int postId);
 	
 }
