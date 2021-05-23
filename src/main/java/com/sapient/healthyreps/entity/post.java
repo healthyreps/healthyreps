@@ -11,7 +11,7 @@ public class post {
 	private String content;
 	private int categoryId;
 	private int votes;
-	private Timestamp timestamp;
+	private Timestamp timeStamp;
 	private int reported;
 	
 	
@@ -27,7 +27,7 @@ public class post {
 		this.content = content;
 		this.categoryId = categoryId;
 		this.votes = votes;
-		this.timestamp = timeStamp;
+		this.timeStamp = timeStamp;
 		this.reported = reported;
 	}
 
@@ -80,17 +80,17 @@ public class post {
 	}
 
 	public Timestamp getTimeStamp() {
-		return timestamp;
+		return timeStamp;
 	}
 
 	public void setTimeStamp(Timestamp timeStamp) {
-		this.timestamp = timeStamp;
+		this.timeStamp = timeStamp;
 	}
 
 	@Override
 	public String toString() {
 		return "post [postId=" + postId + ", userId=" + userId + ", title=" + title + ", content=" + content + ", categoryId="
-				+ categoryId + ", votes=" + votes + ", timeStamp=" + timestamp + ", reported=" + reported + "]";
+				+ categoryId + ", votes=" + votes + ", timeStamp=" + timeStamp + ", reported=" + reported + "]";
 	}
 	
 	
