@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Planner</title>
+<link rel="stylesheet" href="../css/utils.css" />
+<link rel="stylesheet" href="../css/planner.css">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body class="col-12 col-s-12">
+	<!--Navigation bar-->
+	<div id="nav-placeholder"></div>
+	<script>
+      $(function () {
+        $("#nav-placeholder").load("html/nav.html");
+      });
+    </script>
+	<!--end of Navigation bar-->
+
+	<div class="col-12 col-s-12">
+		<form class="displayForm col-3 col-s-1">
+			<ul>
+				<li><a href="#" class="displayButton" onclick="dontShow()">SHOW</a>
+				</li>
+				<li><a href="#addData" class="displayButton" onclick="doShow()">ADD</a>
+				</li>
+			</ul>
+		</form>
+		<span id="user" class="col-3 col-s-3 user"> <a href=""
+			style="text-decoration: none">Akshay Rathore</a> <!--Link to the user page to be given in above href-->
+		</span> <br />
+		<table border="1" bordercolor="black" class="col-10 col-s-10 planner">
+			<caption id="caption">Planned schedule</caption>
+			<tr>
+				<th class="col-2 col-s-2">Date</th>
+				<th class="col-2 col-s-2">Timing for excercise</th>
+				<th class="col-3 col-s-3">Exercises to be performed</th>
+				<th class="col-2 col-s-2">Target of the exercises</th>
+				<th class="col-3 col-s-3">Diet goal of the day</th>
+			</tr>
+		</table>
+	</div>
+	<br />
+	<br />
+	<br />
+	<div id="addData" class="col-12 col-s-12">
+		<form>
+			<h3>Add to your planner</h3>
+			<span>
+				<p>Enter the date :</p> <input type="date" name="date_Entry"
+				id="dateEntryId" />
+			</span> <br /> <br /> <span>
+				<p>Time of excercise:</p> <input type="time" name="time_Entry"
+				id="timeEntryId" />
+			</span> <br /> <span>
+				<p>Enter the excercises needed to be performed (seperated by
+					commas) :</p> <textarea name="exercises_perform"
+					id="exercisesPerformId" cols="1" rows="3"
+					placeholder="Write down the excercises you want to do"
+					class="col-7 col-s-5" resize:none;
+          ></textarea>
+			</span> <br /> <span>
+				<p>Enter the target of the excercises (seperated by commas, in
+					same order) :</p> <textarea name="exercises_target"
+					id="exercisesTargetId" cols="1" rows="3"
+					placeholder="Write down the goal of each excercises you want to do"
+					class="col-7 col-s-5" resize:none;
+          ></textarea>
+			</span> <br /> <span>
+				<p>Enter the diet-goal (seperated by commas) :</p> <textarea
+					name="diet_goal" id="dietGoalId" cols="1" rows="3"
+					placeholder="Write down the diet goal" class="col-7 col-s-5"
+					resize:none;
+          ></textarea>
+			</span> <br /> <input type="submit" value="ADD" />
+		</form>
+	</div>
+	<script src="../js/planner.js"></script>
+</body>
+</html>

@@ -18,7 +18,7 @@ import com.sapient.healthyreps.utils.DbConnect;
 public class AnswerDAO implements IAnswerDAO {
 
 	@Override
-	public boolean insertAnswer(Answer answer,int qid) {
+	public boolean insertAnswer(Answer answer, int qid) {
 
 		String sql = "insert into answer (description,votes,modified_at,question_id,user_id,reliability) values(?,?,?,?,?,?)";
 		Date dt = new Date();
@@ -44,8 +44,6 @@ public class AnswerDAO implements IAnswerDAO {
 
 	@Override
 	public Answer getAnswerByAnswerID(int answer_id) {
-
-
 
 		String sql = "select answer_id,description,votes,modified_at,question_id,user_id,reliability from answer where answer_id=?";
 		try {
@@ -77,8 +75,8 @@ public class AnswerDAO implements IAnswerDAO {
 	@Override
 	public List<Answer> getAllAnswersByQuestionID(int question_id, String order) {
 
-
-		String sql = "select answer_id,description,votes,modified_at,question_id,user_id,reliability from answer where question_id= ? order by votes "+order;
+		String sql = "select answer_id,description,votes,modified_at,question_id,user_id,reliability from answer where question_id= ? order by votes "
+				+ order;
 
 		List<Answer> list;
 		list = new ArrayList<Answer>();
@@ -146,20 +144,18 @@ public class AnswerDAO implements IAnswerDAO {
 	}
 
 	@Override
-	public boolean updateAnswerByAnswerID(Answer answer,int aid) {
-
-		
+	public boolean updateAnswerByAnswerID(Answer answer, int aid) {
 
 		String sql = "update answer set description=?,modified_at=? where answer_id=?";
 		Date dt = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String currentTime = sdf.format(dt);
-		
+
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
 			ps.setString(1, answer.getDescription());
 //			ps.setInt(2, 0);
-			ps.setString(2,currentTime);
+			ps.setString(2, currentTime);
 //			ps.setInt(4, answer.getQuestionID());
 //			ps.setInt(5, answer.getUserID());
 //			ps.setInt(6, answer.getReliability());

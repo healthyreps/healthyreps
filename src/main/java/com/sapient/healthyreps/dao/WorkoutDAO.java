@@ -15,7 +15,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 
 	@Override
 	public boolean insertWork(Workout workout) {
-		String sql = "insert into workouttime values(?,?,?,?,?,?,?)";
+		String sql = "insert into work_out_time values(?,?,?,?,?,?,?)";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -37,7 +37,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 
 	@Override
 	public boolean deleteWork(int userid) {
-		String sql = "delete from workouttime where userId=?";
+		String sql = "delete from work_out_time where user_id=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -54,7 +54,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 	@Override
 	public Workout getSetsReps(int userid) {
 
-		String sql = "select sets, repsSet from workouttime where userId=?";
+		String sql = "select sets, reps_set from work_out_time where user_id=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -75,8 +75,8 @@ public class WorkoutDAO implements IWorkoutDAO {
 	}
 
 	@Override
-	public boolean updateWork(Workout workout, int userId) {
-		String q = "update  workouttime set day = ? ,time = ? ,sets = ? ,repsSet = ? , description = ? where userId = ? ";
+	public boolean updateWork(Workout workout, int user_id) {
+		String q = "update  work_out_time set day = ? ,time = ? ,sets = ? ,reps_set = ? , description = ? where user_id = ? ";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(q);
 
