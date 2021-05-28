@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sapient.healthyreps.dao.UserRegisterDAO;
+import com.sapient.healthyreps.dao.UserDAO;
+import com.sapient.healthyreps.entity.User;
 import com.sapient.healthyreps.entity.UserCredential;
-import com.sapient.healthyreps.entity.UserRegister;
 import com.sapient.healthyreps.exception.InvalidId;
-import com.sapient.healthyreps.interfaces.IUserRegisterDAO;
+import com.sapient.healthyreps.interfaces.IUserDAO;
 
 @RestController
 public class UserRegisterController {
 
-	IUserRegisterDAO dao = new UserRegisterDAO();
+	IUserDAO dao = new UserDAO();
 
 	@GetMapping("/api/AllRegisteredUsers")
-	public List<UserRegister> getAllUser() {
+	public List<User> getAllUser() {
 		return dao.getAllUserRegisterInfo();
 	}
 
@@ -30,14 +30,14 @@ public class UserRegisterController {
 	}
 
 	@GetMapping("/api/register/{uId}")
-	public UserRegister getUser(@PathVariable("uId") int uid) {
+	public User getUser(@PathVariable("uId") int uid) {
 		try {
-			UserRegisterDAO.checkIdOfUser(uid);
+			UserDAO.checkIdOfUser(uid);
 		} catch (InvalidId e) {
 			e.printStackTrace();
 			return null;
 		}
-		UserRegister user = ((dao.getUser(uid)).get(0));
+		User user = ((dao.getUser(uid)).get(0));
 		return user;
 	}
 }

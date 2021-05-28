@@ -1,14 +1,15 @@
 package com.sapient.healthyreps.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sapient.healthyreps.dao.UserRegisterDAO;
+import com.sapient.healthyreps.dao.UserDAO;
 import com.sapient.healthyreps.entity.RequirementForChangePassword;
-import com.sapient.healthyreps.exception.PasswordIsWeak;
-import com.sapient.healthyreps.exception.PasswordTooSmall;
-import com.sapient.healthyreps.interfaces.IUserRegisterDAO;
+import com.sapient.healthyreps.entity.User;
+import com.sapient.healthyreps.interfaces.IUserDAO;
 
 /*public class RequirementForChangePassword{
 	private String email;
@@ -17,20 +18,20 @@ import com.sapient.healthyreps.interfaces.IUserRegisterDAO;
 
 @RestController
 public class ChangePasswordController {
-	IUserRegisterDAO dao = new UserRegisterDAO();
+	IUserDAO dao = new UserDAO();
 
 	@PostMapping("/api/changePassword")
-	public Boolean userPasswordReset(@RequestBody RequirementForChangePassword passwordChangeRequest) {
-		try {
-			UserRegisterDAO.passwordCheck(passwordChangeRequest.getNewPassword());
-		} catch (PasswordTooSmall e) {
-			e.printStackTrace();
-			return false;
-		} catch (PasswordIsWeak e) {
-			e.printStackTrace();
-			return false;
-		}
-		return dao.updatePassword(passwordChangeRequest.getEmail(), passwordChangeRequest.getNewPassword());
+	public String userPasswordReset(@ModelAttribute RequirementForChangePassword passwordChangeRequest) {
+		/*
+		 * try { UserDAO.passwordCheck(passwordChangeRequest.getNewPassword()); } catch
+		 * (PasswordTooSmall e) { e.printStackTrace(); return "PasswordTooSmall"; }
+		 * catch (PasswordIsWeak e) { e.printStackTrace(); return "PasswordIsWeak"; }
+		 */
+		List<User> user = dao.getUserId(passwordChangeRequest.getEmail());
+		if (user.isEmpty())
+			return "Email is wrong";
+		return dao.updatePassword(user.get(0).getUserId(), passwordChangeRequest.getNewPassword())
+				? "Password Changed Successfully"
+				: "Email is wrong";
 	}
-
 }

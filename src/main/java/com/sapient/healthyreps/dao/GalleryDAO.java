@@ -18,7 +18,7 @@ public class GalleryDAO implements IGalleryDAO {
 	public boolean insertNewImage(Gallery images) {
 		// TODO Auto-generated method stub
 		try {
-			UserRegisterDAO.checkIdOfUser(images.getUserId());
+			UserDAO.checkIdOfUser(images.getUserId());
 			checkUrlOfImage(images.getImageUrl(), images.getUserId());
 		} catch (InvalidId e) {
 			e.printStackTrace();
