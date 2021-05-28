@@ -4,7 +4,7 @@ function addPlanner() {
 function addPlannerUtil() {
   let obj = {};
   let _userId = document.querySelector("#user-id").value;
-  obj.userId = parseInt(_userId);
+  obj.user_id = parseInt(_userId);
   obj.date = document.getElementById("dateEntryId").value;
   obj.timing = document.getElementById("timeEntryId").value;
   obj.exercise_perform = document.getElementById("exercisesPerformId").value;
@@ -30,7 +30,7 @@ function addPlannerUtil() {
 }
 
 function formValidation(obj) {
-  if (obj.userId == NaN) {
+  if (obj.user_id == NaN) {
     alert("give your user id");
     return false;
   }
