@@ -1,153 +1,194 @@
-.header {
-	margin-top: 100px;
+
+.header{
+    margin-top: 100px;
 }
 
-.blogHeader {
-	display: block;
-	height: 30%;
-	width: 90%;
-	margin: auto;
+.blogHeader{
+    
+    display: block;
+    height: 30%;
+    width: 90%;
+    margin: auto;
 }
 
-.blogTitle {
-	display: block;
-	margin-left: auto;
-	height: 50%;
-	width: 50%;
-	margin-right: auto;
+.blogTitle{
+    display: block;
+    margin-left: auto;
+    height: 50%;
+    width: 50%;
+    margin-right: auto;
+    text-align: center;
 }
 
-.blogImage {
-	width: 50%;
-	height: 50%;
-	margin-left: auto;
-	margin-right: auto;
+.authorInfo{
+    margin-left: auto;
+    text-align: center;
+    width: 50%;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 2px;
 }
 
-img {
-	width: 100%;
-	display: block;
-	border: 1px black solid;
+.votePost{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.main {
-	display: block;
-	margin-top: 40px;
-	background-image: none;
+#postRating{
+    padding: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.main p {
-	font-size: 1.1em;
-	margin-bottom: 20px;
-	text-align: justify;
+.blogImage{
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.commentsDiv {
-	margin-top: 50px;
-	padding: 20px;
+#authorName{
+    text-decoration: underline;
+    
 }
 
-.commentsCenter {
-	display: block;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+img{
+    width: 100%;
+    display: block;
+    border: 1px black solid;
 }
 
-.cardview {
-	background-color: rgb(238, 212, 212);
-	border-radius: 10px;
-	z-index: 1;
-	padding: 20px;
-	margin-top: 10px;
+.main{
+    display: block;
+    margin-top: 40px;
+    background-image:none;
 }
 
-.addComment {
-	display: flex;
+.main p{
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
-.commentImg {
-	text-align: center;
-	align-items: center;
+
+.commentsDiv{
+    margin-top: 50px;
+    padding: 20px;
 }
 
-.commentImg img {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
+.commentsCenter{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.commentContent {
-	text-align: center;
-	flex-grow: 2;
-	align-items: center;
+.cardview{
+    background-color: rgb(238, 212, 212);
+    border-radius: 10px;
+    z-index: 1;
+    padding: 20px;
+    margin-top: 10px;
 }
 
-.commentContent input {
-	width: 80%;
-	height: 90%;
-	margin-left: 20px;
-	padding: 10px;
-	margin: 2px;
+
+.addComment{
+    display: flex;
 }
 
-#submit {
-	width: 15%;
-	height: 100%;
-	padding: 10px;
-	margin: 2px;
+.commentImg{
+    text-align: center;
+    align-items: center;
 }
 
-.commentContent form {
-	display: flex;
+.commentImg img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-.comment {
-	display: flex;
-	margin-top: 20px;
+.commentContent{
+    text-align: center;
+    flex-grow: 2;
+    align-items: center;
 }
 
-.commentContent p {
-	width: 90%;
-	text-align: justify;
-	margin-left: 20px;
+.commentForm{
+    text-align: center;
+    flex-grow: 2;
+    align-items: center;
 }
 
-.commentRight {
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	height: 100%;
+.commentForm input{
+    width: 80%;
+    height: 90%;
+    margin-left: 20px;
+    padding: 10px;
+    margin:2px;
+}
+#submit{
+    width: 15%;
+    height: 100%;
+    padding: 10px;
+    margin:2px;
+}
+.commentForm form{
+    display: flex;
 }
 
-.actionbuttons {
-	display: flex;
-	flex-grow: 1;
-	align-items: center;
+.comment{
+    display: flex;
+    margin-top: 20px;
+}
+.commentContent p{
+    width: 90%;
+    text-align: justify;
+    margin-left: 20px;
 }
 
-.actionbuttons button {
-	margin-left: 2px;
+.commentRight{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
 }
 
-.signup {
-	display: block;
-	text-align: center;
+.actionbuttons{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
 }
 
-.signup button {
-	padding: 10px;
-	font-size: 1.1em;
-	margin-top: 10px;
+.actionbuttons button{
+    margin-left: 2px;
 }
 
-#timestamp {
-	margin-top: 5px;
-	text-align: center;
-	border: 1px solid black;
+.signup{
+    display: block;
+    text-align: center;
 }
 
-#rating {
-	margin-bottom: 5px;
-	text-align: center;
+.signup button{
+    padding: 10px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+#timestamp{
+    margin-top: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+
+#rating{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#hidable{
+    text-align: center;
 }
