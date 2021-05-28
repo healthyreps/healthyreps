@@ -1,6 +1,5 @@
-@import url("http://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&family=Roboto&display=swap");
-
-:root {
+@import url("<script src="https://code.jquery.com/jquery-1.10.2.js"></script>")
+  ;: root {
   --main-bg-color: brown;
   --font1: "Baloo Bhaina 2", cursive;
   --font2: "Roboto", sans-serif;
