@@ -1,93 +1,90 @@
 h1 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 900;
-    color: #222222;
-    text-align: center;
-
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+	font-weight: 900;
+	color: #222222;
+	text-align: center;
 }
 
 h1:hover {
-    font-weight: 700;
-    color: blue;
+	font-weight: 700;
+	color: blue;
 }
+
 label {
-    color: rgb(129, 30, 210);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
+	color: rgb(129, 30, 210);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: center;
 }
-table { 
-	width: 750px; 
-	border-collapse: collapse; 
-	margin:50px auto;
-	}
+
+table {
+	width: 750px;
+	border-collapse: collapse;
+	margin: 50px auto;
+}
 
 /* Zebra striping */
-tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
+tr:nth-of-type(odd) {
+	background: #eee;
+}
 
-th { 
-	background: #3498db; 
-	color: white; 
-	font-weight: bold; 
-	}
+th {
+	background: #3498db;
+	color: white;
+	font-weight: bold;
+}
 
-td, th { 
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
+td, th {
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: left;
 	font-size: 18px;
-	}
+}
 
 /* 
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-	table { 
-	  	width: 100%; 
+@media only screen and (max-width: 760px) , ( min-device-width : 768px)
+	and (max-device-width: 1024px) {
+	table {
+		width: 100%;
 	}
 
 	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
+	table, thead, tbody, th, td, tr {
+		display: block;
 	}
-	
+
 	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
+	thead tr {
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
+	tr {
+		border: 1px solid #ccc;
+	}
+	td {
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee; 
+		border-bottom: 1px solid #eee;
 		position: relative;
-		padding-left: 50%; 
+		padding-left: 50%;
 	}
-
-	td:before { 
+	td:before {
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
+		width: 45%;
+		padding-right: 10px;
 		white-space: nowrap;
 		/* Label the data */
 		content: attr(data-column);
-
 		color: #000;
 		font-weight: bold;
 	}
-
 }

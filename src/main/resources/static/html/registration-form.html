@@ -1,59 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>You are One</title>
-    <meta name="description" content="Whatever we wants" />
-    <link rel="stylesheet" href="../css/utils.css" />
-    <!-- <link rel="stylesheet" href="../css/registration-form-style.css"> -->
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  </head>
-  <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
-    <script>
+<head>
+<meta charset="utf-8" />
+<title>You are One</title>
+<meta name="description" content="Whatever we wants" />
+<link rel="stylesheet" href="../css/utils.css" />
+<!-- <link rel="stylesheet" href="../css/registration-form-style.css"> -->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+	<!--Navigation bar-->
+	<div id="nav-placeholder"></div>
+	<script>
       $(function () {
         $("#nav-placeholder").load("nav.html");
       });
     </script>
-    <!--end of Navigation bar-->
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#news">About</a></li>
-    </ul>
-    <div class="container">
-      <h3>Register</h3>
-      <form action="/api/register" method="post">
-        <label for="Name">Name</label>
-        <input
-          type="text"
-          id="fname"
-          name="userName"
-          placeholder="Your name.."
-        />
-
-        <label for="Email">Email</label>
-        <input
-          type="text"
-          id="Email"
-          name="userEmail"
-          placeholder="Your Email Id.."
-        />
-
-        <label for="Password">Password</label>
-        <input
-          type="password"
-          id="Pwd"
-          name="password"
-          placeholder="Your Password.."
-        />
-
-        <input type="submit" value="Submit" />
-        <h4>Already have an account <a href="#login">Login</a></h4>
-      </form>
-    </div>
-    <div class="myImg">
-      <img src="../img/registration-page-image.png" class="responsive" />
-    </div>
-  </body>
+	<!--end of Navigation bar-->
+	<ul>
+		<li><a href="#home">Home</a></li>
+		<li><a href="#news">About</a></li>
+	</ul>
+	<div class="container">
+		<h3>Register</h3>
+		<form action="/api/register" method="post">
+			<label for="Name">Name</label> <input type="text" id="fname"
+				name="userName" placeholder="Your name.." /> <label
+				for="Email">Email</label> <input type="text" id="Email"
+				name="userEmail" placeholder="Your Email Id.." /> <label
+				for="Password">Password</label> <input type="password" id="Pwd"
+				name="password" placeholder="Your Password.." /> <input
+				type="submit" value="Submit" />
+			<h4>
+				Already have an account <a href="#login">Login</a>
+			</h4>
+		</form>
+	</div>
+	<div class="myImg">
+		<img src="../img/registration-page-image.png" class="responsive" />
+	</div>
+</body>
 </html>

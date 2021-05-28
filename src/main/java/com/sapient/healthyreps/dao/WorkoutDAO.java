@@ -37,7 +37,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 
 	@Override
 	public boolean deleteWork(int userid) {
-		String sql = "delete from work_out_time where userId=?";
+		String sql = "delete from work_out_time where user_id=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -75,8 +75,8 @@ public class WorkoutDAO implements IWorkoutDAO {
 	}
 
 	@Override
-	public boolean updateWork(Workout workout, int userId) {
-		String q = "update  work_out_time set day = ? ,time = ? ,sets = ? ,repsSet = ? , description = ? where userId = ? ";
+	public boolean updateWork(Workout workout, int user_id) {
+		String q = "update  work_out_time set day = ? ,time = ? ,sets = ? ,reps_set = ? , description = ? where user_id = ? ";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(q);
 
