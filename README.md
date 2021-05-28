@@ -10,7 +10,7 @@ package names - lower case
 
 ## Live Website Link
 
-https://healthyreps.herokuapp.com/
+http://localhost:8080/
 
 ## API Endpoints
 
