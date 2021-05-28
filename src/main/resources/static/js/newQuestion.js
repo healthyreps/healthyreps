@@ -90,8 +90,6 @@ async function populateLists() {
 
     form.elements.category.value = question.categoryID;
 
-    form.elements.user.value = 2;
-
     form.elements.link.value = question.imageLink;
 
     //  localStorage.removeItem("operationQuestion")
