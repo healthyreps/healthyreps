@@ -14,7 +14,7 @@ import com.sapient.healthyreps.utils.DbConnect;
 public class PermissionDAO implements IPermissionDAO {
 
     @Override
-    public boolean isIDPresent(int id, String tableName) throws InvalidID  {
+    public boolean isIDPresent(int id, String tableName) throws InvalidId  {
 
 		String sqlForException = "SELECT " + tableName + "_id FROM " + tableName + " WHERE " + tableName
 				+ "_id=?";
@@ -23,7 +23,7 @@ public class PermissionDAO implements IPermissionDAO {
                 psException.setInt(1, id);
                 ResultSet rs = psException.executeQuery();
                 if (!rs.next()) {
-                    throw new InvalidID(tableName);
+                    throw new InvalidId(tableName);
                 }
             } catch (SQLException e1) {
 				System.out.println("error traced");

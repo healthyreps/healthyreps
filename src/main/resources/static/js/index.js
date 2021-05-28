@@ -20,7 +20,7 @@ let form = document.querySelector("#searchForm");
 
 //Initial function call when the DOM is loaded
 async function getAllQuestion() {
-  let questions = await fetch("http://localhost:8080/allquestions");
+  let questions = await fetch("http://localhost:8080/api/allquestions");
   let arr = await questions.json();
   console.log(arr);
   renderQuestions(arr);
@@ -68,7 +68,7 @@ function goToAnswers(e) {
 
 //Function to delete a question
 async function deleteQuestion(id) {
-  let url = `http://localhost:8080/user/1/question-delete(allanswers)/${id}`;
+  let url = `http://localhost:8080/api/user/1/question-delete(allanswers)/${id}`;
   let res = await fetch(url, {
     method: "DELETE",
   });
@@ -76,12 +76,11 @@ async function deleteQuestion(id) {
   res = await res.text();
   console.log(res);
 
-  let questions = await fetch("http://localhost:8080/allquestions");
+  let questions = await fetch("http://localhost:8080/api/allquestions");
   let arr = await questions.json();
   console.log(arr);
   renderQuestions(arr);
 
-   
   // location.reload();
 }
 
@@ -98,7 +97,7 @@ function compVotesAsc(a, b) {
 }
 
 async function getQuestionsByVotes() {
-  let questions = await fetch("http://localhost:8080/allquestions");
+  let questions = await fetch("http://localhost:8080/api/allquestions");
   let arr = await questions.json();
   // console.log(arr);
   // renderQuestions(arr);
@@ -128,7 +127,7 @@ function compDateAsc(a, b) {
 }
 
 async function getQuestionsByDate() {
-  let questions = await fetch("http://localhost:8080/allquestions");
+  let questions = await fetch("http://localhost:8080/api/allquestions");
   let arr = await questions.json();
   // console.log(arr);
   // renderQuestions(arr);

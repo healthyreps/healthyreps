@@ -16,10 +16,10 @@ async function loadQuestionAndData() {
   answersContainer.innerHTML = "";
 
   // console.log(qid);
-  let question = await fetch("http://localhost:8080/question/" + qid);
+  let question = await fetch("http://localhost:8080/api/question/" + qid);
   question = await question.json();
   let answers = await fetch(
-    `http://localhost:8080/question/${qid}/answer/order/desc`
+    `http://localhost:8080/api/question/${qid}/answer/order/desc`
   );
   let answersArr = await answers.json();
 
@@ -81,7 +81,7 @@ async function renderData(q, answers) {
 async function deleteAnswer(e) {
   // console.log(e.target.parentElement.parentElement.id);
   let aid = e.target.parentElement.parentElement.id;
-  let url = `http://localhost:8080/question/${qid}/answer/${aid}`;
+  let url = `http://localhost:8080/api/question/${qid}/answer/${aid}`;
 
   await await fetch(url, {
     method: "DELETE",
@@ -104,14 +104,14 @@ function addAnswer(e) {
 
 async function increaseVotes(e) {
   let cid = e.target.parentElement.parentElement.parentElement.id;
-  let comment = await fetch("http://localhost:8080/answer/1/comment/" + cid);
+  let comment = await fetch("http://localhost:8080/api/answer/1/comment/" + cid);
   comment = await comment.json();
 
   comment.reliability += 1;
 
   console.log(comment);
 
-  await fetch(`http://localhost:8080/answer/1/comment/${cid}`, {
+  await fetch(`http://localhost:8080/api/answer/1/comment/${cid}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -124,14 +124,14 @@ async function increaseVotes(e) {
 
 async function decreaseVotes(e) {
   let cid = e.target.parentElement.parentElement.parentElement.id;
-  let comment = await fetch("http://localhost:8080/answer/1/comment/" + cid);
+  let comment = await fetch("http://localhost:8080/api/answer/1/comment/" + cid);
   comment = await comment.json();
 
   comment.reliability -= 1;
 
   console.log(comment);
 
-  await fetch(`http://localhost:8080/answer/1/comment/${cid}`, {
+  await fetch(`http://localhost:8080/api/answer/1/comment/${cid}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -175,7 +175,7 @@ async function getAnswers(answers) {
 }
 
 async function renderComments(aid) {
-  let arr = await fetch(`http://localhost:8080/answer/${aid}/comment`);
+  let arr = await fetch(`http://localhost:8080/api/answer/${aid}/comment`);
   let comments = await arr.json();
 
   console.log(comments);

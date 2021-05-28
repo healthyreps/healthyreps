@@ -53,7 +53,7 @@ public class QuestionController {
 	public List<Question> getAllQuestionFromUserID(@PathVariable int uid) {
 		try {
 			permissionDAO.isIDPresent(uid, "user");
-		} catch (InvalidID e1) {
+		} catch (InvalidId e1) {
 			e1.printStackTrace();
 			return null;
 		}
@@ -64,7 +64,7 @@ public class QuestionController {
 	public List<Question> getAllQuestionFromUserIDOrderByVotes(@PathVariable int uid, @PathVariable String ord) {
 		try {
 			permissionDAO.isIDPresent(uid, "user");
-		} catch (InvalidID e1) {
+		} catch (InvalidId e1) {
 			e1.printStackTrace();
 			return null;
 		}
@@ -110,7 +110,7 @@ public class QuestionController {
 		int flag = 0;
 		try {
 			permissionDAO.isIDPresent(uid, "user");
-		} catch (InvalidID e1) {
+		} catch (InvalidId e1) {
 			e1.printStackTrace();
 			flag = 1;
 		}
