@@ -1,13 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&family=Roboto&display=swap");
+@import url("http://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&family=Roboto&display=swap");
+
+:root {
+  --main-bg-color: brown;
+  --font1: "Baloo Bhaina 2", cursive;
+  --font2: "Roboto", sans-serif;
+}
 
 .font1 {
   font-family: var(--font1);
 }
-
 .font2 {
   font-family: var(--font2);
 }
-
 .max-width-1 {
   max-width: 80vw;
 }
@@ -78,7 +82,6 @@
   list-style-type: none;
   display: flex;
 }
-
 .navbar-links li a {
   display: block;
   text-decoration: none;
@@ -114,17 +117,14 @@
   z-index: 111;
   transition: 0.4s all;
 }
-
 .navbar-links li.navbar-dropdown .dropdown a {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: 400;
 }
-
 .navbar-dropdown .dropdown a:hover {
   padding-left: 30px;
 }
-
 .navbar-links li a:hover {
   color: #ff3f34;
 }

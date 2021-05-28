@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sapient.healthyreps.dao.UserDAO;
 import com.sapient.healthyreps.entity.RequirementForChangePassword;
 
-
 @RestController
 public class ChangePasswordController {
 

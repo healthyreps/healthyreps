@@ -72,7 +72,7 @@ downvotePost.addEventListener("click", (e)=>{
 function fetchAllData(){
     // fetch the post
     // TO DO: ADD AUTHOR DETAILS FROM USER TABLE
-    fetch('http://localhost:8080/post/' + postId)
+    fetch('https://healthyreps.herokuapp.com/post/' + postId)
     .then(res => res.json())
     .then(json => {
         console.log(json);
@@ -89,7 +89,7 @@ function fetchAllData(){
     });
 
     // fetch all comments for this post
-    fetch('http://localhost:8080/CommentsPost/post/' + postId)
+    fetch('https://healthyreps.herokuapp.com/CommentsPost/post/' + postId)
     .then(res => res.json())
     .then(json => {
         console.log(json)
