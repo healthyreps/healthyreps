@@ -29,7 +29,7 @@ public class WorkoutController {
 		return workoutdao.deleteWork(user_id);
 	}
 
-	@RequestMapping(value = "api/workout/{user_id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/workout/{user_id}", method = RequestMethod.GET)
 	public Workout getWork(@PathVariable int user_id) {
 		return workoutdao.getSetsReps(user_id);
 
