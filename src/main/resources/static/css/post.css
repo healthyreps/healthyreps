@@ -1,194 +1,188 @@
-
-.header{
-    margin-top: 100px;
+.header {
+  margin-top: 100px;
 }
 
-.blogHeader{
-    
-    display: block;
-    height: 30%;
-    width: 90%;
-    margin: auto;
+.blogHeader {
+  display: block;
+  height: 30%;
+  width: 90%;
+  margin: auto;
 }
 
-.blogTitle{
-    display: block;
-    margin-left: auto;
-    height: 50%;
-    width: 50%;
-    margin-right: auto;
-    text-align: center;
+.blogTitle {
+  display: block;
+  margin-left: auto;
+  height: 50%;
+  width: 50%;
+  margin-right: auto;
+  text-align: center;
 }
 
-.authorInfo{
-    margin-left: auto;
-    text-align: center;
-    width: 50%;
-    margin-right: auto;
-    border: 1px solid black;
-    margin-top: 10px;
-    padding: 2px;
+.authorInfo {
+  margin-left: auto;
+  text-align: center;
+  width: 50%;
+  margin-right: auto;
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 2px;
 }
 
-.votePost{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+.votePost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-#postRating{
-    padding: 2px;
-    margin-left: 5px;
-    margin-right: 5px;
+#postRating {
+  padding: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.blogImage{
-    width: 50%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
+.blogImage {
+  width: 50%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#authorName{
-    text-decoration: underline;
-    
+#authorName {
+  text-decoration: underline;
 }
 
-img{
-    width: 100%;
-    display: block;
-    border: 1px black solid;
+img {
+  width: 100%;
+  display: block;
+  border: 1px black solid;
 }
 
-.main{
-    display: block;
-    margin-top: 40px;
-    background-image:none;
+.main {
+  display: block;
+  margin-top: 40px;
+  background-image: none;
 }
 
-.main p{
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    text-align: justify;
+.main p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
-
-.commentsDiv{
-    margin-top: 50px;
-    padding: 20px;
+.commentsDiv {
+  margin-top: 50px;
+  padding: 20px;
 }
 
-.commentsCenter{
-    display: block;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+.commentsCenter {
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.cardview{
-    background-color: rgb(238, 212, 212);
-    border-radius: 10px;
-    z-index: 1;
-    padding: 20px;
-    margin-top: 10px;
+.cardview {
+  background-color: rgb(238, 212, 212);
+  border-radius: 10px;
+  z-index: 1;
+  padding: 20px;
+  margin-top: 10px;
 }
 
-
-.addComment{
-    display: flex;
+.addComment {
+  display: flex;
 }
 
-.commentImg{
-    text-align: center;
-    align-items: center;
+.commentImg {
+  text-align: center;
+  align-items: center;
 }
 
-.commentImg img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.commentImg img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-.commentContent{
-    text-align: center;
-    flex-grow: 2;
-    align-items: center;
+.commentContent {
+  text-align: center;
+  flex-grow: 2;
+  align-items: center;
 }
 
-.commentForm{
-    text-align: center;
-    flex-grow: 2;
-    align-items: center;
+.commentForm {
+  text-align: center;
+  flex-grow: 2;
+  align-items: center;
 }
 
-.commentForm input{
-    width: 80%;
-    height: 90%;
-    margin-left: 20px;
-    padding: 10px;
-    margin:2px;
+.commentForm input {
+  width: 80%;
+  height: 90%;
+  margin-left: 20px;
+  padding: 10px;
+  margin: 2px;
 }
-#submit{
-    width: 15%;
-    height: 100%;
-    padding: 10px;
-    margin:2px;
+#submit {
+  width: 15%;
+  height: 100%;
+  padding: 10px;
+  margin: 2px;
 }
-.commentForm form{
-    display: flex;
-}
-
-.comment{
-    display: flex;
-    margin-top: 20px;
-}
-.commentContent p{
-    width: 90%;
-    text-align: justify;
-    margin-left: 20px;
+.commentForm form {
+  display: flex;
 }
 
-.commentRight{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    height: 100%;
+.comment {
+  display: flex;
+  margin-top: 20px;
+}
+.commentContent p {
+  width: 90%;
+  text-align: justify;
+  margin-left: 20px;
 }
 
-.actionbuttons{
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
+.commentRight {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 100%;
 }
 
-.actionbuttons button{
-    margin-left: 2px;
+.actionbuttons {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
 }
 
-.signup{
-    display: block;
-    text-align: center;
+.actionbuttons button {
+  margin-left: 2px;
 }
 
-.signup button{
-    padding: 10px;
-    font-size: 1.1em;
-    margin-top: 10px;
+.signup {
+  display: block;
+  text-align: center;
 }
 
-#timestamp{
-    margin-top: 5px;
-    text-align: center;
-    border: 1px solid black;
+.signup button {
+  padding: 10px;
+  font-size: 1.1em;
+  margin-top: 10px;
 }
 
-
-#rating{
-    margin-bottom: 5px;
-    text-align: center;
+#timestamp {
+  margin-top: 5px;
+  text-align: center;
+  border: 1px solid black;
 }
 
-#hidable{
-    text-align: center;
+#rating {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#hidable {
+  text-align: center;
 }
