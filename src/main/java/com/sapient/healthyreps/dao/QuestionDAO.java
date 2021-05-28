@@ -383,7 +383,7 @@ public class QuestionDAO implements IQuestionDAO {
 		Date dt = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String currentTime = sdf.format(dt);
-		String sql = "update question set title = ?, description = ?, modified_at=?, category_id=?, image_link=? where question_id=?";
+		String sql = "UPDATE question SET title = ?, description = ?, modified_at=?, category_id=?, image_link=? WHERE question_id=?";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
 			ps.setString(1, question.getTitle());

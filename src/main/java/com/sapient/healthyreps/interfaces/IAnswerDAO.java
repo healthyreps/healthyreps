@@ -7,15 +7,15 @@ import com.sapient.healthyreps.entity.Answer;
 // contracts 
 public interface IAnswerDAO {
 
-	public boolean insertAnswer(Answer answer);
+	public boolean insertAnswer(Answer answer, int qid);
 
-	public List<Answer> getAllAnswersByQuestionID(int question_id, String order);
+	public List<Answer> getAllAnswersByQuestionID(int QuestionID, String order);
 
-	public boolean deleteAnswer(int answer_id);
+	public boolean deleteAnswer(int AnswerID);
 
-	public boolean deleteAnswersByQuestionID(int question_id);
+	public boolean deleteAnswersByQuestionID(int QuestionID);
 
-	public boolean updateAnswerByAnswerID(Answer answer);
+	public boolean updateAnswerByAnswerID(Answer answer, int aid);
 
-	public Answer getAnswerByAnswerID(int answer_id);
+	public Answer getAnswerByAnswerID(int AnswerID);
 }

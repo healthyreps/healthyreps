@@ -28,7 +28,7 @@ class AnswerDAOTest {
 
 		// Create Test
 
-		boolean inserted = answerDAO.insertAnswer(answer);
+		boolean inserted = answerDAO.insertAnswer(answer, 2);
 
 		assertTrue(inserted);
 
@@ -44,7 +44,7 @@ class AnswerDAOTest {
 
 		answer.setDescription("Updated Test answer");
 
-		assertTrue(answerDAO.updateAnswerByAnswerID(answer));
+		assertTrue(answerDAO.updateAnswerByAnswerID(answer, 1));
 
 		// Delete test
 

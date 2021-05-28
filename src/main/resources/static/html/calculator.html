@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" content="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/utils.css" />
+<link rel="stylesheet" typ="text/css" href="../css/calculator.css" />
+<title>Fitness Calculator</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+	<!--Navigation bar-->
+	<div id="nav-placeholder"></div>
+	<script>
+      $(function () {
+        $("#nav-placeholder").load("html/nav.html");
+      });
+    </script>
+	<!--end of Navigation bar-->
+
+	<form>
+		<h3>Personal Details</h3>
+		<div class="grid-container">
+			<div class="grid-item1">Age</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" id="age" />
+			</div>
+			<div class="grid-item">
+				<input type="radio" name="radio" id="f" /><span
+					style="display: inline-block; font-family: verdana">Female</span>
+			</div>
+			<div class="grid-item">
+				<input type="radio" name="radio" id="m" /><span
+					style="display: inline-block; font-family: Verdana">Male</span>
+			</div>
+			<div class="grid-item1">Weight in kg</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" id="weight" />
+			</div>
+			<div class="grid-item1">Height in cm</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" id="height" />
+			</div>
+			<div class="grid-item1">Waist Circumference in cm</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" id="wc" />
+			</div>
+		</div>
+		<input type="button" value="Calculate" id="displayButton" />
+		<hr />
+		<h3>Results</h3>
+		<span id="sub-head">Body Mass</span>
+		<div class="grid-container">
+			<div class="grid-item1">Body Fat</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="bf" />
+			</div>
+			<div class="grid-item1">Fat Mass</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="bmil" />
+			</div>
+			<div class="grid-item1">Lean Mass</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="fm" />
+			</div>
+			<div class="grid-item1">Body Mass Index</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="bmi" />
+			</div>
+			<div class="grid-item1">BMI(max)</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="bmih" />
+			</div>
+			<div class="grid-item1">BMI(min)</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="lm" />
+			</div>
+			<div class="grid-item1">Waist to Height Ratio</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="whr" />
+			</div>
+		</div>
+		<span id="sub-head">Daily Calories</span>
+		<div class="grid-container">
+			<div class="grid-item1">Rest Metabolism Rate</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="rmr" />
+			</div>
+			<div class="grid-item1">Calories Needed</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="cn" />
+			</div>
+			<div class="grid-item1">Calorie Goal</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="cg" />
+			</div>
+			<div class="grid-item1">Calories to burn</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="cb" />
+			</div>
+		</div>
+		<span id="sub-head">Daily Diet Break Down</span>
+		<div class="grid-container">
+			<div class="grid-item1">Protiens</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="pro" />
+			</div>
+			<div class="grid-item1">Carbs</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="carb" />
+			</div>
+			<div class="grid-item1">Fats</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="fat" />
+			</div>
+			<div class="grid-item1">Calorie intake</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="ci" />
+			</div>
+		</div>
+		<span id="sub-head">Heart Rate</span>
+		<div class="grid-container">
+			<div class="grid-item1">Beats per Minute (High)</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="bpmh" />
+			</div>
+			<div class="grid-item1">Beats per Minute (Low)</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="bpml" />
+			</div>
+			<div class="grid-item1">Maximum Beats per Minute</div>
+			<div class="grid-item">
+				<input type="text" class="txt-pd" readonly="readonly" id="bpmm" />
+			</div>
+		</div>
+	</form>
+</body>
+</html>

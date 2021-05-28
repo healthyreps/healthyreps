@@ -27,7 +27,7 @@ public class CategoryController {
 	@GetMapping("/api/category/{cid}")
 	public String getCategoryFromID(@PathVariable int cid) {
 		try {
-			permissionDAO.isIDPresent(cid, "category");
+			permissionDAO.isIdPresent(cid, "category");
 		} catch (InvalidId e1) {
 			e1.printStackTrace();
 			return null;
@@ -48,7 +48,7 @@ public class CategoryController {
 	@DeleteMapping("/api/category/{cid}")
 	public String deleteCategory(@PathVariable int cid) {
 		try {
-			permissionDAO.isIDPresent(cid, "category");
+			permissionDAO.isIdPresent(cid, "category");
 		} catch (InvalidId e1) {
 			e1.printStackTrace();
 			return null;
@@ -59,7 +59,7 @@ public class CategoryController {
 	@PutMapping("/api/category")
 	public String updateCategory(@RequestBody Category category) {
 		try {
-			permissionDAO.isIDPresent(category.getCategoryID(), "category");
+			permissionDAO.isIdPresent(category.getCategoryID(), "category");
 		} catch (InvalidId e1) {
 			e1.printStackTrace();
 			return null;

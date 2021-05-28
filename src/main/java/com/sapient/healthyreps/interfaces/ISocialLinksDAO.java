@@ -12,5 +12,4 @@ public interface ISocialLinksDAO {
 
 	public List<String> getUserLinks(int uid);
 
-
 }

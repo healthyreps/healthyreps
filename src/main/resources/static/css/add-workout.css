@@ -1,0 +1,90 @@
+.container {
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	margin-top: 10%;
+	margin-left: 20%;
+	margin-right: 20%;
+	/* padding-bottom: 50px;
+    padding-top: 20px; */
+}
+
+#main {
+	border-radius: 5px;
+	border: solid black 1px;
+	padding-bottom: 10%;
+	background-color: #fff;
+	font-weight: 1000;
+	color: black;
+	background-color: #FFC0CB;
+	padding-top:10px;
+}
+
+.form {
+	margin-left: 25%;
+}
+
+input, select {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+}
+
+input:hover, select:hover {
+	background-color: #fff;
+}
+
+h1 {
+	text-align: center;
+	color: black;
+}
+
+.v1 {
+	float: left;
+	width: 40%;
+	margin-top: 10px;
+}
+
+.v2 {
+	float: left;
+	width: 60%;
+	margin-top: 10px;
+}
+
+.submit-btn {
+	color: #fff;
+	margin-left: 27%;
+	margin-top: 20px;
+	font-weight: 900;
+	background-color: #696969;
+	display: inline-block;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px 25px;
+	border-radius: 5px;
+}
+
+button {
+	transition-duration: 0.4s;
+}
+
+button:hover {
+	background-color: #4caf50;
+	color: white;
+}
+
+@media screen and (max-width: 960px) {
+	.v1, .v2, input[type="submit"] {
+		width: 100%;
+		margin-top: 10px;
+		margin-left: 20%;
+	}
+	.submit-btn {
+		margin-left: 20%;
+	}
+}
+
+@media screen and (max-width: 1224px) {
+	.form {
+		margin-left: 30px;
+	}
+}

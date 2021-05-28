@@ -1,23 +1,20 @@
 .question-content {
-  height: 80vh;
-  /* background-color: rgb(245, 245, 255); */
-  display: block;
-  margin-bottom: 12px;
-  padding: 9px;
-  position: relative;
-  overflow: hidden;
+	height: 80vh;
+	/* background-color: rgb(245, 245, 255); */
+	display: block;
+	margin-bottom: 12px;
+	padding: 9px;
+	position: relative;
+	overflow: hidden;
 }
 
 .question-content::after {
-  content: "";
-  background-image: url("../img/11.svg");
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: inherit;
-  opacity: 0.15;
-  z-index: -1;
-}
-
-.question-form {
+	content: "";
+	background-image: url("../img/11.svg");
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: inherit;
+	opacity: 0.15;
+	z-index: -1;
 }

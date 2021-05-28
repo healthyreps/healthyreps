@@ -1,68 +1,75 @@
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: white;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: white;
 }
 
 li {
-  float: left;
+	float: left;
 }
 
 li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 18px 20px;
-  text-decoration: none;
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 18px 20px;
+	text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  color: #ffb84d;
+	color: #ffb84d;
 }
 
 .active {
-  background-color: #4CAF50;
+	background-color: #4caf50;
 }
 
-body {background-color:white;font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-input[type=text],input[type=password], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+body {
+	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+* {
+	box-sizing: border-box;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+input[type="text"], input[type="password"], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type="submit"] {
+	background-color: #04aa6d;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
 }
 
 .container {
-	float:left;
-	width:50%;
-	height:auto;
+	float: left;
+	width: 50%;
+	height: auto;
 	border-radius: 5px;
 	background-color: #cccccc;
 	padding: 20px;
 }
-.responsive{
-	border-radius:1%;
-	width:50%;
-	height:524px;
+
+.responsive {
+	border-radius: 1%;
+	width: 50%;
+	height: 524px;
 }
