@@ -124,7 +124,7 @@ function fetchAllData(){
             createComment.appendChild(createCommentContent);
             createComment.appendChild(createCommentRight);
 
-            createCommentImg.innerHTML = "<img src=\"../img/avatar.png\" alt=\"Avatar\">" + json[i].userId;
+            createCommentImg.innerHTML = "<img src=\"https://source.unsplash.com/1600x900/?health" alt=\"Avatar\">" + json[i].userId;
             createCommentContent.appendChild(createCommentText);
             createCommentText.innerHTML = json[i].content;
 
