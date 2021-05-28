@@ -15,7 +15,7 @@ public interface IUserDAO {
 
 	public List<User> getUserByEmailAndPwd(String email, String Pwd);
 
-	public Boolean updatePassword(int uid, String newPassword);
+	public Boolean updatePassword(String email, String newPassword);
 
 	public List<User> getUserId(String email);
 

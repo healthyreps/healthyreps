@@ -1,12 +1,12 @@
-let form = document.querySelector(".login-form");
+let form = document.querySelector(".pwd-form");
 
 async function handleForm(e) {
   e.preventDefault();
   let user = {
-    userEmail: form.elements.userEmail.value,
-    password: form.elements.password.value,
+    email: form.elements.email.value,
+    newPassword: form.elements.newPassword.value,
   };
-  await fetch("/api/login", {
+  await fetch("/api/changePassword", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -14,7 +14,7 @@ async function handleForm(e) {
     body: JSON.stringify(user),
   });
 
-  window.location.href = "../html/allPostsByUser.html";
+  window.location.href = "../html/login.html";
 }
 
 form.addEventListener("submit", handleForm);

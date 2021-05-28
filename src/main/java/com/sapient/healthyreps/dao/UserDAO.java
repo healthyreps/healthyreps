@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.sapient.healthyreps.entity.User;
 import com.sapient.healthyreps.entity.UserCredential;
 import com.sapient.healthyreps.exception.DuplicateEmail;
@@ -15,6 +17,7 @@ import com.sapient.healthyreps.exception.PasswordTooSmall;
 import com.sapient.healthyreps.interfaces.IUserDAO;
 import com.sapient.healthyreps.utils.DbConnect;
 
+@Service
 public class UserDAO implements IUserDAO {
 
 	@Override
@@ -174,12 +177,14 @@ public class UserDAO implements IUserDAO {
 	}
 
 	@Override
-	public Boolean updatePassword(int uid, String newPassword) {
+	public Boolean updatePassword(String email, String newPassword) {
+		List<User> user = getUserId(email);
+
 		String sql = "update user set password = ?  where user_id = ? ";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
 			ps.setString(1, newPassword);
-			ps.setInt(2, uid);
+			ps.setInt(2, user.get(0).getUserId());
 			return ps.executeUpdate() > 0;
 		} catch (SQLException e) {
 			e.printStackTrace();
