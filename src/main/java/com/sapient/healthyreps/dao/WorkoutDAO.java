@@ -54,7 +54,7 @@ public class WorkoutDAO implements IWorkoutDAO {
 	@Override
 	public Workout getSetsReps(int userid) {
 
-		String sql = "select sets, reps_set from work_out_time where user_id=?";
+		String sql = "select sets, reps_set, time, description from work_out_time where user_id=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -66,6 +66,8 @@ public class WorkoutDAO implements IWorkoutDAO {
 			Workout w = new Workout();
 			w.setSets(rs.getInt(1));
 			w.setReps_per_set(rs.getInt(2));
+			w.setTime(rs.getString(3));
+			w.setDescription(rs.getString(4));
 			return w;
 
 		} catch (SQLException e) {

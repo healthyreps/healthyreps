@@ -20,13 +20,58 @@ let form = document.querySelector("#searchForm");
 
 //Initial function call when the DOM is loaded
 async function getAllQuestion() {
-  let questions = await fetch(
-    "https://healthyreps.herokuapp.com/api/allquestions"
-  );
+  let questions = await fetch(`http://localhost:8080/api/allquestions`);
   let arr = await questions.json();
   console.log(arr);
   renderQuestions(arr);
   container.addEventListener("click", goToAnswers);
+  let upButtons = document.querySelectorAll(".up");
+  let downButtons = document.querySelectorAll(".down");
+
+  for (let i = 0; i < upButtons.length; i++) {
+    upButtons[i].addEventListener("click", increaseVotes);
+    downButtons[i].addEventListener("click", decreaseVotes);
+  }
+}
+
+async function increaseVotes(e) {
+  console.log("up pressed");
+  let qid = e.target.parentElement.parentElement.id;
+  console.log(qid);
+  let question = await fetch("http://localhost:8080/api/question/" + qid);
+
+  question = await question.json();
+  question.votes += 1;
+  console.log(question);
+  await fetch(`http://localhost:8080/api/user/1/question-update/${qid}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(question),
+  });
+
+  getAllQuestion();
+}
+
+async function decreaseVotes(e) {
+  console.log("down pressed");
+  let qid = e.target.parentElement.parentElement.id;
+  console.log(qid);
+  let question = await fetch("http://localhost:8080/api/question/" + qid);
+
+  question = await question.json();
+  question.votes -= 1;
+  console.log(question);
+  await fetch(`http://localhost:8080/api/user/1/question-update/${qid}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(question),
+  });
+
+  getAllQuestion();
 }
 
 //Funnction for rendering the list of questions
@@ -34,20 +79,24 @@ function renderQuestions(questions) {
   container.innerHTML = "";
   questions.forEach((q) => {
     let question = `<div class="home-article" id="${q.questionId}">
+    
+     
         <div class="home-article-img">
-          <img src="../img/11.svg" alt="" />
-          <button class="btn delete-question">Delete</button>
-        </div>
-
-        <div class="home-article-content font1">
-          <a href=""  class="question-link">
-          <h3>${q.title}</h3>
-          </a>
-
-          <span>Votes ${q.votes}</span><br>
-         <span>Date ${q.modifiedAt} </span>
-        </div>
-      </div>`;
+           <img src="${q.imageLink}" alt="" />
+           <button class="btn delete-question">Delete</button>
+         </div>
+ 
+         <div class="home-article-content font1">
+           <a href=""  class="question-link">
+           <h3>${q.title}</h3>
+           </a>
+ 
+           <span >Votes <span id="v${q.questionId}">${q.votes}</span></span><br>
+           <button class="up btn">up</button>
+           <button class="down btn">down</button><br>
+          <span>Date ${q.modifiedAt} </span>
+         </div>
+       </div>`;
     container.innerHTML += question;
   });
 }
@@ -70,7 +119,7 @@ function goToAnswers(e) {
 
 //Function to delete a question
 async function deleteQuestion(id) {
-  let url = `https://healthyreps.herokuapp.com/api/user/1/question-delete(allanswers)/${id}`;
+  let url = `http://localhost:8080/api/user/1/question-delete(allanswers)/${id}`;
   let res = await fetch(url, {
     method: "DELETE",
   });
@@ -78,9 +127,7 @@ async function deleteQuestion(id) {
   res = await res.text();
   console.log(res);
 
-  let questions = await fetch(
-    "https://healthyreps.herokuapp.com/api/allquestions"
-  );
+  let questions = await fetch("http://localhost:8080/api/allquestions");
   let arr = await questions.json();
   console.log(arr);
   renderQuestions(arr);
@@ -101,9 +148,7 @@ function compVotesAsc(a, b) {
 }
 
 async function getQuestionsByVotes() {
-  let questions = await fetch(
-    "https://healthyreps.herokuapp.com/api/allquestions"
-  );
+  let questions = await fetch("http://localhost:8080/api/allquestions");
   let arr = await questions.json();
   // console.log(arr);
   // renderQuestions(arr);
@@ -133,9 +178,7 @@ function compDateAsc(a, b) {
 }
 
 async function getQuestionsByDate() {
-  let questions = await fetch(
-    "https://healthyreps.herokuapp.com/api/allquestions"
-  );
+  let questions = await fetch("http://localhost:8080/api/allquestions");
   let arr = await questions.json();
   // console.log(arr);
   // renderQuestions(arr);

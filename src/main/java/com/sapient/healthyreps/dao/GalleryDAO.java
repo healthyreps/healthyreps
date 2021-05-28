@@ -6,19 +6,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.sapient.healthyreps.entity.Gallery;
 import com.sapient.healthyreps.exception.ImageAlreadyPresent;
 import com.sapient.healthyreps.exception.InvalidId;
 import com.sapient.healthyreps.interfaces.IGalleryDAO;
 import com.sapient.healthyreps.utils.DbConnect;
 
+@Service
 public class GalleryDAO implements IGalleryDAO {
 
 	@Override
 	public boolean insertNewImage(Gallery images) {
 		// TODO Auto-generated method stub
 		try {
-			UserRegisterDAO.checkIdOfUser(images.getUserId());
+			UserDAO.checkIdOfUser(images.getUserId());
 			checkUrlOfImage(images.getImageUrl(), images.getUserId());
 		} catch (InvalidId e) {
 			e.printStackTrace();

@@ -17,7 +17,7 @@ public class PostDAO implements IPostDAO {
 	@Override
 	public boolean insertPost(int postId, int userId, String title, int categoryId, String content, int votes,
 			Timestamp timeStamp, int reported) {
-		String sql = "INSERT INTO post(postId, userId, title, categoryId, content, votes, timeStamp, reported) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO post(post_id, user_id, title, category_id, content, votes, time_stamp, reported) VALUES(?,?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -42,7 +42,7 @@ public class PostDAO implements IPostDAO {
 	public boolean insertPost(int userId, String title, int categoryId, String content, int votes, Timestamp timeStamp,
 			int reported) {
 
-		String sql = "INSERT INTO post(userID, title, categoryId, content, votes, timeStamp, reported) VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO post(user_id, title, category_id, content, votes, time_stamp, reported) VALUES(?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -65,7 +65,7 @@ public class PostDAO implements IPostDAO {
 
 	// Added today
 	public boolean insertPost(Post post) {
-		String sql = "INSERT INTO post(userId, title, categoryId, content, votes, timeStamp, reported) VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO post(user_id, title, category_id, content, votes, time_stamp, reported) VALUES(?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -116,7 +116,7 @@ public class PostDAO implements IPostDAO {
 			return null;
 		}
 
-		String sql = "select * from post where postId = ?";
+		String sql = "select * from post where post_id = ?";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -145,7 +145,7 @@ public class PostDAO implements IPostDAO {
 			return false;
 		}
 
-		String sql = "DELETE FROM post WHERE postId = ?";
+		String sql = "DELETE FROM post WHERE post_id = ?";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
 			ps.setInt(1, postId);
@@ -162,7 +162,7 @@ public class PostDAO implements IPostDAO {
 	public boolean updatePost(int postId, String title, String content, int categoryId, int votes, Timestamp timeStamp,
 			int reported) {
 
-		String sql = "UPDATE post SET title=?, content=?, categoryId=?, votes=?, timeStamp=?, reported=? WHERE postId=?";
+		String sql = "UPDATE post SET title=?, content=?, category_id=?, votes=?, time_stamp=?, reported=? WHERE post_id=?";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -185,7 +185,7 @@ public class PostDAO implements IPostDAO {
 	}
 
 	public boolean updatePost(Post post) {
-		String sql = "UPDATE post SET title=?, content=?, categoryId=?, votes=?, timeStamp=?, reported=? WHERE postId=?";
+		String sql = "UPDATE post SET title=?, content=?, category_id=?, votes=?, time_stamp=?, reported=? WHERE post_id=?";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -216,7 +216,7 @@ public class PostDAO implements IPostDAO {
 			return false;
 		}
 
-		String sql = "UPDATE post SET votes=? WHERE postId=?";
+		String sql = "UPDATE post SET votes=? WHERE post_id=?";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -234,7 +234,7 @@ public class PostDAO implements IPostDAO {
 	@Override
 	public List<Post> getAllPostbyUserId(int userId) {
 		List<Post> posts = new ArrayList<>();
-		String statement = "select * from post where userId = ?";
+		String statement = "select * from post where user_id = ?";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(statement);
 			ps.setInt(1, userId);
@@ -281,7 +281,7 @@ public class PostDAO implements IPostDAO {
 			return false;
 		}
 
-		String sql = "UPDATE post SET reported = ? where postId = ?";
+		String sql = "UPDATE post SET reported = ? where post_id = ?";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -299,7 +299,7 @@ public class PostDAO implements IPostDAO {
 	@Override
 	public List<Post> getAllDraftPosts(int userId) {
 		List<Post> posts = new ArrayList<>();
-		String statement = "select * from post where userId = ? and reported = -100";
+		String statement = "select * from post where user_id = ? and reported = -100";
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(statement);
 			ps.setInt(1, userId);
@@ -340,7 +340,7 @@ public class PostDAO implements IPostDAO {
 	@Override
 	public List<Post> getAllPostsByCategoryId(int categoryId) {
 		List<Post> posts = new ArrayList<>();
-		String sql = "select postId, userId, title, categoryId, content, votes, timeStamp, reported from post where categoryId= ?";
+		String sql = "select postId, user_id, title, category_id, content, votes, time_stamp, reported from post where category_id= ?";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -362,7 +362,7 @@ public class PostDAO implements IPostDAO {
 	private void checkPostId(int postId) throws InvalidId {
 		// TODO Auto-generated method stub
 
-		String sqlForException = "SELECT * FROM post WHERE postID = ?";
+		String sqlForException = "SELECT * FROM post WHERE post_id = ?";
 		try {
 			PreparedStatement psException = DbConnect.getMySQLConn().prepareStatement(sqlForException);
 			psException.setInt(1, postId);

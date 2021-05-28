@@ -1,75 +1,331 @@
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: white;
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&family=Roboto&display=swap");
+
+:root {
+  --main-bg-color: brown;
+  --font1: "Baloo Bhaina 2", cursive;
+  --font2: "Roboto", sans-serif;
 }
 
-li {
-	float: left;
+.font1 {
+  font-family: var(--font1);
+}
+.font2 {
+  font-family: var(--font2);
+}
+.max-width-1 {
+  max-width: 80vw;
 }
 
-li a {
-	display: block;
-	color: black;
-	text-align: center;
-	padding: 18px 20px;
-	text-decoration: none;
+.max-width-full {
+  width: 100%;
 }
 
-li a:hover:not(.active) {
-	color: #ffb84d;
+.max-width-2 {
+  max-width: 60vw;
 }
 
-.active {
-	background-color: #4caf50;
+.m-auto {
+  margin: auto;
 }
 
-body {
-	background-color: white;
-	font-family: Arial, Helvetica, sans-serif;
+.my-2 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.mx-1 {
+  margin-left: 23px;
+  margin-right: 23px;
+}
+
+.btn {
+  padding: 0px 15px;
+  padding-top: 3px;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-family: var(--font1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  color: white;
+  background-color: var(--main-bg-color);
+}
+
+.form-input {
+  padding: 0px 5px;
+  padding-top: 3px;
+  font-size: 14px;
+  display: inline;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin: 25px 1px;
+  font-family: var(--font1);
+}
+
+.center {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  background-color: #fff;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+}
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  color: #444;
+  padding: 5px 5px;
+  font-weight: 700;
+  transition: 0.4s all;
+}
+
+.navbar-links li.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding: 20px 0;
+  top: 100%;
+  transform: translateY(50px);
+  left: 0;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 111;
+  transition: 0.4s all;
+}
+.navbar-links li.navbar-dropdown .dropdown a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.navbar-dropdown .dropdown a:hover {
+  padding-left: 30px;
+}
+.navbar-links li a:hover {
+  color: #ff3f34;
 }
 
 * {
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-input[type="text"], input[type="password"], select, textarea {
-	width: 100%;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	margin-top: 6px;
-	margin-bottom: 16px;
-	resize: vertical;
+.navigation {
+  font-family: var(--font1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  margin-bottom: 12px;
+  padding: 9px;
+  position: relative;
+}
+
+.content::after {
+  content: "";
+  background-image: url("https://source.unsplash.com/1600x900/?health");
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  opacity: 0.15;
+}
+
+.content-left {
+  font-family: var(--font1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  z-index: 1;
+}
+
+.content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  height: 50px;
+  background-color: rgb(220, 205, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.nav-left {
+  font-size: 20px;
+  display: flex;
+}
+
+.nav-left ul {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+  font-size: 18px;
+}
+
+.nav-left ul li {
+  list-style: none;
+  margin: 0 14px;
+  font-family: var(--font2);
+}
+
+.nav-left ul li :hover {
+  color: var(--main-bg-color);
+  font-weight: bolder;
+}
+
+.nav-left ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 900px) {
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 23px;
+    padding: 0;
+  }
+  .navigation ul {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+  .navigation ul li {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+  .navigation ul li:hover > a {
+    color: var(--main-bg-color);
+    font-weight: bolder;
+  }
+  .form-input {
+    display: block;
+    margin: 15px 0px;
+    width: inherit;
+  }
+  .nav-right button {
+    display: block;
+    width: 100%;
+    margin: 10px 0px;
+  }
+}
+.active {
+  background-color: #4caf50;
+}
+
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
 input[type="submit"] {
-	background-color: #04aa6d;
-	color: white;
-	padding: 12px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-input[type="submit"]:hover {
-	background-color: #45a049;
+.btn:hover {
+  background-color: #45a049;
 }
 
 .container {
-	float: left;
-	width: 50%;
-	height: auto;
-	border-radius: 5px;
-	background-color: #cccccc;
-	padding: 20px;
+  float: left;
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+  background-color: #cccccc;
+  padding: 20px;
+  margin-top: 40px;
+}
+.responsive {
+  margin-top: 40px;
+  border-radius: 1%;
+  width: 50%;
+  height: 388px;
+}
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
 }
 
-.responsive {
-	border-radius: 1%;
-	width: 50%;
-	height: 524px;
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
 }

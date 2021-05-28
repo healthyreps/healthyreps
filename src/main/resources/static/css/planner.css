@@ -1,274 +1,297 @@
+body {
+  background-image: url("https://source.unsplash.com/1600x900/?health");
+  background-position: left;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
 .planner {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10%;
-	width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 75%;
 }
-
 .displayForm {
-	position: absolute;
-	margin-left: 1%;
-	margin-top: 1%;
-	width: 20%;
-	height: 5%;
-	padding-inline-start: 1em;
+  position: absolute;
+  margin-left: 1%;
+  margin-top: 1%;
+  width: 20%;
+  height: 5%;
+  padding-inline-start: 1em;
 }
-
 .displayForm li {
-	display: inline;
-	width: 50%;
+  display: inline;
+  width: 50%;
 }
-
 .displayButton {
-	width: 25%;
+  width: 25%;
+  border-radius: 20%;
 }
-
 ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-
-a.displayButton:link, a.displayForm:visited {
-	background-color: white;
-	color: black;
-	border: 2px solid black;
-	padding: 10px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
+a.displayButton:link,
+a.displayForm:visited {
+  background-color: rgba(63, 94, 235, 0.699);
+  color: rgba(255, 255, 255, 0.849);
+  border: 2px solid rgba(63, 94, 235, 0.699);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
-
-a.displayButton:hover, a.displayButton:active {
-	background-color: black;
-	color: white;
+a.displayButton:hover,
+a.displayButton:active {
+  background-color: rgb(45, 55, 143);
+  color: white;
 }
-
 .user {
-	position: absolute;
-	top: 1%;
-	right: 1%;
-	font: 1.2em sans-serif;
-	font-weight: bold;
-	font-style: normal;
-	text-decoration: none;
-	text-align: end;
-	margin-top: 2.5%;
-	margin-right: 2%;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  text-align: end;
+  margin-top: 2.5%;
+  margin-right: 2%;
 }
-
+input[type="text"].user {
+  margin-top: 5%;
+}
 #addData {
-	margin-left: 10%;
-	max-width: 70%;
-	display: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-origin: padding-box;
+  margin-left: 10%;
+  max-width: 80%;
+  display: none;
+  border-radius: 15%;
 }
-
 a:link {
-	color: black;
+  color: black;
 }
 
 /* visited link */
 a:visited {
-	color: black;
+  color: black;
 }
 
 /* mouse over link */
 a:hover {
-	color: red;
+  color: red;
 }
 
 /* selected link */
 a:active {
-	color: black;
+  color: black;
 }
-
 caption {
-	font: 2em sans-serif;
-	font-weight: bold;
-	margin-bottom: 2%;
+  font-size: 2em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  text-decoration: underline;
+  color: rgb(11, 68, 255);
 }
-
 div h3 {
-	font: 1.7em sans-serif;
-	font-weight: bold;
-	margin-top: 10%;
+  font: 1.7em sans-serif;
+  font-weight: bold;
+  margin-top: 10%;
+  text-decoration: underline;
+  color: rgb(182, 38, 187);
+  text-align: center;
 }
-
 div p {
-	width: fit-content;
-	font: 1.1em sans-serif;
-	font-weight: 500;
-	font-style: italic;
-	margin-top: 5%;
+  width: fit-content;
+  font: 1.1em sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: 5%;
+  margin-left: 5%;
 }
-
-div input[type="text"], textarea {
-	font: 1em sans-serif;
-	font-weight: 500;
-	font-style: italic;
-	text-overflow: clip;
-	border-style: inset;
-	border-width: 2px;
-	overflow: auto;
+.input {
+  margin-left: 7.5%;
 }
-
+div input[type="text"],
+textarea {
+  font: 1em sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  text-overflow: clip;
+  border-style: inset;
+  border-width: 2px;
+  overflow: auto;
+}
+button {
+  background-color: rgb(73, 184, 73);
+  color: black;
+  border: 2px solid rgb(51, 255, 0);
+  border-radius: 15px;
+  font: 0.75em sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+}
 div input[type="submit"] {
-	background-color: white;
-	color: black;
-	border: 2px solid red;
-	font: 1em sans-serif;
-	font-weight: bold;
-	font-style: italic;
-	padding: 10px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	width: 20%;
-	margin-top: 5%;
+  background-color: rgb(73, 184, 73);
+  color: black;
+  border: 2px solid red;
+  border-radius: 15px;
+  font: 1em sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 20%;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
-
+table {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 th {
-	padding: 1%;
-	font: 1.1em sans-serif;
+  padding: 1%;
+  font: 1.1em sans-serif;
 }
-
 td {
-	padding: 1%;
-	font: 1em sans-serif;
-	font-style: italic;
-	font-weight: 750;
+  padding: 1%;
+  font: 1em sans-serif;
+  font-style: italic;
+  font-weight: 750;
 }
 /* For mobile phones: */
 [class*="col-"] {
-	width: 100%;
-	font-weight: 100;
-	font-size: 12px;
+  width: 100%;
+  font-weight: 100;
+  font-size: 12px;
 }
-
 @media only screen and (min-width: 600px) {
-	/* For tablets: */
-	.col-s-1 {
-		width: 8.33%;
-		font-weight: 100;
-		font-size: 14px;
-	}
-	.col-s-2 {
-		width: 16.66%;
-		font-weight: 200;
-		font-size: 15px;
-	}
-	.col-s-3 {
-		width: 25%;
-		font-weight: 300;
-		font-size: 18px;
-	}
-	.col-s-4 {
-		width: 33.33%;
-		font-weight: 400;
-		font-size: 18px;
-	}
-	.col-s-5 {
-		width: 41.66%;
-		font-weight: 500;
-		font-size: 18px;
-	}
-	.col-s-6 {
-		width: 50%;
-		font-weight: 500;
-		font-size: 18px;
-	}
-	.col-s-7 {
-		width: 58.33%;
-		font-weight: 500;
-		font-size: 18px;
-	}
-	.col-s-8 {
-		width: 66.66%;
-		font-weight: 500;
-		font-size: 18px;
-	}
-	.col-s-9 {
-		width: 75%;
-		font-weight: 500;
-		font-size: 18px;
-	}
-	.col-s-10 {
-		width: 83.33%;
-		font-weight: 500;
-		font-size: 18px;
-	}
-	.col-s-11 {
-		width: 91.66%;
-		font-weight: 500;
-		font-size: 18px;
-	}
-	.col-s-12 {
-		width: 100%;
-		font-weight: 500;
-		font-size: 18px;
-	}
+  /* For tablets: */
+  .col-s-1 {
+    width: 8.33%;
+    font-weight: 100;
+    font-size: 14px;
+  }
+  .col-s-2 {
+    width: 16.66%;
+    font-weight: 200;
+    font-size: 15px;
+  }
+  .col-s-3 {
+    width: 25%;
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .col-s-4 {
+    width: 33.33%;
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .col-s-5 {
+    width: 41.66%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-6 {
+    width: 50%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-7 {
+    width: 58.33%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-8 {
+    width: 66.66%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-9 {
+    width: 75%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-10 {
+    width: 83.33%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-11 {
+    width: 91.66%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .col-s-12 {
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+  }
 }
-
 @media only screen and (min-width: 768px) {
-	/* For desktop: */
-	.col-1 {
-		width: 8.33%;
-		font-weight: 300;
-		font-size: 20px;
-	}
-	.col-2 {
-		width: 16.66%;
-		font-weight: 400;
-		font-size: 20px;
-	}
-	.col-3 {
-		width: 25%;
-		font-weight: 500;
-		font-size: 20px;
-	}
-	.col-4 {
-		width: 33.33%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-5 {
-		width: 41.66%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-6 {
-		width: 50%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-7 {
-		width: 58.33%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-8 {
-		width: 66.66%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-9 {
-		width: 75%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-10 {
-		width: 83.33%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-11 {
-		width: 91.66%;
-		font-weight: 700;
-		font-size: 20px;
-	}
-	.col-12 {
-		width: 100%;
-		font-weight: 700;
-		font-size: 18px;
-	}
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+    font-weight: 300;
+    font-size: 20px;
+  }
+  .col-2 {
+    width: 16.66%;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .col-3 {
+    width: 25%;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .col-4 {
+    width: 33.33%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-5 {
+    width: 41.66%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-6 {
+    width: 50%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-7 {
+    width: 58.33%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-8 {
+    width: 66.66%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-9 {
+    width: 75%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-10 {
+    width: 83.33%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-11 {
+    width: 91.66%;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .col-12 {
+    width: 100%;
+    font-weight: 700;
+    font-size: 18px;
+  }
 }

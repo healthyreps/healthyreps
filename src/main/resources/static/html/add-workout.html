@@ -1,90 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Document</title>
-<link rel="stylesheet" href="../css/utils.css" />
-<link rel="stylesheet" href="../css/add-workout.css" />
-<script type="text/javascript" src="../js/add-workout.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-<body>
-	<!--Navigation bar-->
-	<div id="nav-placeholder"></div>
-	<script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Workout</title>
+    <link rel="stylesheet" href="../css/utils.css" />
+    <link rel="stylesheet" href="../css/add-workout.css" />
+    <script type="text/javascript" src="../js/add-workout.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
       $(function () {
         $("#nav-placeholder").load("html/nav.html");
       });
     </script>
-	<!--end of Navigation bar-->
+    <!--end of Navigation bar-->
 
-	<div class="container">
-		<div id="main">
-			<div>
-				<h1>Add your workout time table!</h1>
-			</div>
-			<div class="form">
-				<div class="row">
-					<div class="v1">
-						<label for="workoutday">Workout Day</label>
-					</div>
-					<div class="v2">
-						<select name="days" id="days">
-							<option value="default">Select</option>
-							<option value="monday">Monday</option>
-							<option value="tuesday">Tuesday</option>
-							<option value="wednesday">Wednesday</option>
-							<option value="thrusday">Thursday</option>
-							<option value="friday">Friday</option>
-							<option value="saturday">Saturday</option>
-							<option value="sunday">Sunday</option>
-						</select>
-					</div>
-				</div>
+    <div class="container">
+      <div id="main">
+        <div>
+          <h1>Add your workout time table!</h1>
+        </div>
+        <div class="form">
+          <div class="row">
+            <div class="v1">
+              <label for="workoutday">Workout Day</label>
+            </div>
+            <div class="v2">
+              <select name="days" id="days">
+                <option value="default">Select</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thrusday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="v1">
-						<label for="workouttime">Workout Time</label>
-					</div>
-					<div class="v2">
-						<input type="time" id="time" name="time" />
-					</div>
-				</div>
+          <div class="row">
+            <div class="v1">
+              <label for="workouttime">Workout Time</label>
+            </div>
+            <div class="v2">
+              <input type="time" id="time" name="time" />
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="v1">
-						<label for="workoutset">Number of Sets</label>
-					</div>
-					<div class="v2">
-						<input type="number" id="sets" name="sets" />
-					</div>
-				</div>
+          <div class="row">
+            <div class="v1">
+              <label for="workoutset">Number of Sets</label>
+            </div>
+            <div class="v2">
+              <input type="number" id="sets" name="sets" />
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="v1">
-						<label for="workoutreps">Number of Reputations</label>
-					</div>
-					<div class="v2">
-						<input type="number" id="reps" name="reps" />
-					</div>
-				</div>
+          <div class="row">
+            <div class="v1">
+              <label for="workoutreps">Number of Reputations</label>
+            </div>
+            <div class="v2">
+              <input type="number" id="reps" name="reps" />
+            </div>
+          </div>
 
-				<div class="row">
-					<div class="v1">
-						<label for="workoutdesc">Workouk Description</label>
-					</div>
-					<div class="v2">
-						<input type="text" id="description" name="description" />
-					</div>
-				</div>
+          <div class="row">
+            <div class="v1">
+              <label for="workoutdesc">Workouk Description</label>
+            </div>
+            <div class="v2">
+              <input type="text" id="description" name="description" />
+            </div>
+          </div>
 
-				<div>
-					<button class="submit-btn" onclick="addWorkout()">Submit</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
+          <div>
+            <button class="submit-btn" onclick="addWorkout()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>&copy;</span>2021 Reps.com</div>
+  </body>
 </html>

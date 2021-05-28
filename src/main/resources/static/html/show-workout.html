@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Document</title>
-<link rel="stylesheet" href="../css/utils.css" />
-<link rel="stylesheet" href="../css/show-workout.css" />
-<script type="text/javascript" src="../js/show-workout.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
-<body>
-	<!--Navigation bar-->
-	<div id="nav-placeholder"></div>
-	<script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/utils.css" />
+    <link rel="stylesheet" href="../css/show-workout.css" />
+    <script type="text/javascript" src="../js/show-workout.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
       $(function () {
         $("#nav-placeholder").load("html/nav.html");
       });
     </script>
-	<!--end of Navigation bar-->
-	<header>
-		<h1>Get workout</h1>
-		<hr />
-		<div class="">
-			<label for="user-id">Enter User Id</label> <input type="text"
-				id="user-id" placeholder="Enter User Id" />
-			<button onclick="fnGetUser()">Get User</button>
-		</div>
-	</header>
-	<hr />
-	<table>
-		<thead>
-			<tr>
-				<th>sets</th>
-				<th>repsSet</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td data-column="sets"><span id="sets"></span></td>
-				<td data-column="repsSet"><span id="repsSet"></span></td>
-			</tr>
-		</tbody>
-	</table>
-</body>
+    <!--end of Navigation bar-->
+    <header>
+      <h1>Get workout</h1>
+      <hr />
+      <div class="">
+        <label for="user-id">Enter User Id</label>
+        <input type="text" id="user-id" placeholder="Enter User Id" />
+        <button onclick="fnGetUser()">Get User</button>
+      </div>
+    </header>
+    <hr />
+    <table>
+      <thead>
+        <tr>
+          <th>sets</th>
+          <th>repsSet</th>
+          <th>time</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-column="sets"><span id="sets"></span></td>
+          <td data-column="repsSet"><span id="repsSet"></span></td>
+          <td data-column="time"><span id="time"></span></td>
+          <td data-column="description"><span id="description"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>&copy;</span>2021 Reps.com</div>
+  </body>
 </html>

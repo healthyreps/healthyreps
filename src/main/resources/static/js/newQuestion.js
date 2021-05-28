@@ -19,7 +19,7 @@ async function handleFormData(e) {
   //   console.log(description);
   let category = form.elements.category.value;
   //   console.log(category);
-  let user = form.elements.user.value;
+  let user = 1;
   //   console.log(user);
   let link = form.elements.link.value;
   //   console.log(link);
@@ -55,7 +55,7 @@ async function handleFormData(e) {
   if (localStorage.getItem("operationQuestion") === "updateQuestion") {
     localStorage.removeItem("operationQuestion");
     window.location.href = "QandA.html";
-  } else window.location.href = "/";
+  } else window.location.href = "/src/main/resources/static/html/";
 }
 
 async function populateLists() {
