@@ -1,55 +1,126 @@
-body {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	background: url(../img/dumbbell-gymm.jpg) no-repeat;
-	background-size: cover;
+
+/* styling for login block */
+a{color: #eeeeee;
+  font-family: "Merriweather", serif;
+  text-decoration: none;
+;}
+#loginCard {
+  font-family: "Merriweather", serif;
+  width: 400px;
+  height: 400px;
+  display: block;
+  float: right;
+  padding: 16px;
+  margin-right: 150px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 #eeeeee;
+  background-color: #222831;
+  opacity: 0.9;
 }
 
-.login-box {
-	width: 280px;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: white;
+#email,
+#password {
+  width: 375px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: #393e46;
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  color: #222831;
+  margin: 20px 7.5px 10px 7.5px;
+}
+#email {
+  margin-top: 50px;
+}
+#headerLoginBlock {
+  align-content: center;
+  font-family: "Merriweather", serif;
+  padding: 16px 0 16px 150px;
+  background-color: #eeeeee;
+  /* background: linear-gradient(to right , #0d7377 ,#14ffec); */
+  margin: 0;
+  color: #222831;
+
+  height: 30px;
+  border-radius: 30px 30px 0 0;
+}
+#loginButton {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border-color: #393e46;
+  font-size: 20px;
+  color: #eeeeee;
+  font-family: "Merriweather", serif;
+  /* background: linear-gradient(to right ,#14ffec , #0d7377); */
+  background: linear-gradient(to left , #0d7377 ,#14ffec);
+  /* background: #0d7377; */
+  margin: 20px 100px 10px 100px;
+  cursor: pointer;
 }
 
-.login-box h1 {
-	float: left;
-	font-size: 40px;
-	border-bottom: 6px solid #4caf50;
-	margin-bottom: 50px;
-	padding: 13px 0;
+#forgotPassword , #registration{
+        font-family: "Merriweather" , serif;
+        color: #eeeeee;
+        font-size: 16px;
+        margin: 8px 100px 8px 100px;
+        cursor: pointer;
+}
+#loginButton:hover {
+        box-shadow: 0 4px 8px 0 #eeeeee;
+      }
+
+/* styling for welcome block */
+#welcomeBlock {
+  font-family: "Merriweather" , serif;;
+  color: black;
+  font-size: 20px;
+  position: relative;
+  display: block;
+  left: 100px;
+  top: 300px;
+  
+}
+/* image block */
+#imageContainer{
+        width: 80%;
+        margin: 3% 10% 0 10%; 
+        height: 750px; 
+        background-image: url("../img/login-image.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        box-shadow: 0 4px 16px 0 #393e46;
+        
+        
 }
 
-.textbox {
-	width: 100%;
-	overflow: hidden;
-	font-size: 20px;
-	padding: 8px 0;
-	margin: 8px 0;
-	border-bottom: 1px solid #4caf50;
+@media only screen and (max-width: 1430px){
+        /* #imageContainer{
+                display: block;
+        } */
+        #welcomeBlock{
+                text-align: center;
+                margin: 10px 20% 0 20%;
+                position: static;
+                color: white;
+        }
+        #loginCard{
+                margin: 0 20% 0 20%;
+                float: none;
+        }
 }
-
-.textbox input {
-	border: none;
-	outline: none;
-	background: none;
-	color: white;
-	font-size: 18px;
-	width: 80%;
-	float: left;
-	margin: 0 10px;
-}
-
-.btn {
-	width: 100%;
-	background: none;
-	border: 2px solid #4caf50;
-	color: white;
-	padding: 5px;
-	font-size: 18px;
-	cursor: pointer;
-	margin: 12px 0;
+/* about us block */
+#aboutUsContainer{
+height: auto;
+width: auto;
+font-family: "Merriweather" , serif; 
+text-align: center;
+padding: 50px;
+border-radius: 30px;
+margin: 10% 20% 20% 20%;
+background-color: #222831;
+color: #eeeeee;
+box-shadow: 0 4px 8px 0 #393e46;
+/* opacity: 0.9; */
 }

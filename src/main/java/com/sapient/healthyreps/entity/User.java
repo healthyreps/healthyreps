@@ -1,21 +1,30 @@
 package com.sapient.healthyreps.entity;
 
-public class UserRegister {
+public class User {
 	private int userId;
 	private String userName;
 	private String emailId;
 	private String password;
 	private Boolean isAdmin;
+	private int reputation;
 
-	public UserRegister() {
+	public User() {
 
 	}
 
-	public UserRegister(int Uid, String UserName, String UserEmail, String Password) {
+	public User(int Uid, String UserName, String UserEmail, String Password) {
 		this.userId = Uid;
 		this.userName = UserName;
 		this.emailId = UserEmail;
 		this.password = Password;
+	}
+
+	public int getReputation() {
+		return reputation;
+	}
+
+	public void setReputation(int reputation) {
+		this.reputation = reputation;
 	}
 
 	public Boolean getIsAdmin() {

@@ -11,13 +11,16 @@ import com.sapient.healthyreps.exception.InvalidId;
 import com.sapient.healthyreps.interfaces.ISocialLinksDAO;
 import com.sapient.healthyreps.utils.DbConnect;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class SocialLinksDAO implements ISocialLinksDAO {
 
 	@Override
 	public boolean insertUrls(SocialLinks link) {
 		// TODO Auto-generated method stub
 		try {
-			UserRegisterDAO.checkIdOfUser(link.getUserId());
+			UserDAO.checkIdOfUser(link.getUserId());
 		} catch (InvalidId e) {
 			e.printStackTrace();
 			return false;

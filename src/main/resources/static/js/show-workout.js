@@ -7,5 +7,7 @@ function fnGetUser() {
     .then((resp) => {
       document.getElementById("sets").innerHTML = resp.sets;
       document.getElementById("repsSet").innerHTML = resp.reps_per_set;
+      document.getElementById("time").innerHTML = resp.time;
+      document.getElementById("description").innerHTML = resp.description;
     });
 }

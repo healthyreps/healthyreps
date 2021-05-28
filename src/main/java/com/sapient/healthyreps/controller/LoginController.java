@@ -1,21 +1,27 @@
 package com.sapient.healthyreps.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sapient.healthyreps.dao.UserRegisterDAO;
+import com.sapient.healthyreps.dao.UserDAO;
+import com.sapient.healthyreps.entity.User;
 import com.sapient.healthyreps.entity.UserLogin;
-import com.sapient.healthyreps.interfaces.IUserRegisterDAO;
 
 @RestController
 public class LoginController {
-	IUserRegisterDAO dao = new UserRegisterDAO();
+
+	@Autowired
+	UserDAO dao = new UserDAO();
 
 	@PostMapping("/api/login")
-	public Boolean userLogin(@RequestBody UserLogin user) {
+	public String userLogin(@RequestBody UserLogin user) {
 
 		String email = user.getUserEmail(), password = user.getPassword();
-		return dao.getUserByEmailAndPwd(email, password).size() == 1;
+		List<User> userObtain = dao.getUserByEmailAndPwd(email, password);
+		return userObtain.isEmpty() ? "Unsuccessful Login" : "Logged in Successfull";
 	}
 }
