@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" content="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" typ="text/css" href="style.css"> -->
     <link rel="stylesheet" href="../css/utils.css" />
     <link rel="stylesheet" typ="text/css" href="../css/calculator.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/javascript" src="../js/calculator.js"></script>
+
     <title>Fitness Calculator</title>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
     <!--Navigation bar-->
@@ -17,13 +21,12 @@
       });
     </script>
     <!--end of Navigation bar-->
-
-    <form>
-      <h3>Personal Details</h3>
+    <form id="form">
+      <h3 class="top-header">Personal Details</h3>
       <div class="grid-container">
         <div class="grid-item1">Age</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" id="age" />
+          <input type="number" class="txt-pd" id="age" />
         </div>
         <div class="grid-item">
           <input type="radio" name="radio" id="f" /><span
@@ -39,49 +42,65 @@
         </div>
         <div class="grid-item1">Weight in kg</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" id="weight" />
+          <input type="number" class="txt-pd" id="weight" />
         </div>
         <div class="grid-item1">Height in cm</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" id="height" />
+          <input type="number" class="txt-pd" id="height" />
         </div>
         <div class="grid-item1">Waist Circumference in cm</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" id="wc" />
+          <input type="number" class="txt-pd" id="wc" />
+        </div>
+        <div class="grid-item1">Activity Level</div>
+        <div class="grid-item">
+          <select class="dropdown" id="ActivityLevel">
+            <option>Sedentary</option>
+            <option>Lightly Active</option>
+            <option>Moderately Active</option>
+            <option>Very Active</option>
+            <option>Extra Active</option>
+          </select>
         </div>
       </div>
-      <input type="button" value="Calculate" id="displayButton" />
+      <input
+        type="button"
+        value="Calculate"
+        id="displayButton"
+        onclick="cal()"
+      />
       <hr />
+
       <h3>Results</h3>
       <span id="sub-head">Body Mass</span>
       <div class="grid-container">
-        <div class="grid-item1">Body Fat</div>
+        <div class="grid-item1">Body Fat (%)</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" readonly="readonly" id="bf" />
+          <input type="text" class="txt-pd" id="bf" />
         </div>
         <div class="grid-item1">Fat Mass</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" readonly="readonly" id="bmil" />
+          <input type="text" class="txt-pd" id="fm" />
         </div>
         <div class="grid-item1">Lean Mass</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" readonly="readonly" id="fm" />
+          <input type="text" class="txt-pd" id="lm" />
         </div>
         <div class="grid-item1">Body Mass Index</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" readonly="readonly" id="bmi" />
+          <input type="text" class="txt-pd" id="bmi" />
         </div>
-        <div class="grid-item1">BMI(max)</div>
+        <div class="grid-item1">Ideal Weight(max)</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" readonly="readonly" id="bmih" />
+          <input type="text" class="txt-pd" id="bmih" />
         </div>
-        <div class="grid-item1">BMI(min)</div>
+        <div class="grid-item1">Ideal Weight(min)</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" readonly="readonly" id="lm" />
+          <input type="text" class="txt-pd" id="bmil" />
         </div>
         <div class="grid-item1">Waist to Height Ratio</div>
         <div class="grid-item">
-          <input type="text" class="txt-pd" readonly="readonly" id="whr" />
+          <input type="text" class="txt-pd" id="whr" />
         </div>
       </div>
       <span id="sub-head">Daily Calories</span>
@@ -90,11 +109,13 @@
         <div class="grid-item">
           <input type="text" class="txt-pd" readonly="readonly" id="rmr" />
         </div>
-        <div class="grid-item1">Calories Needed</div>
+        <div class="grid-item1">
+          Calories Needed (to maintain current weight)
+        </div>
         <div class="grid-item">
           <input type="text" class="txt-pd" readonly="readonly" id="cn" />
         </div>
-        <div class="grid-item1">Calorie Goal</div>
+        <div class="grid-item1">Calorie Goal (Suggested intake)</div>
         <div class="grid-item">
           <input type="text" class="txt-pd" readonly="readonly" id="cg" />
         </div>
@@ -105,15 +126,15 @@
       </div>
       <span id="sub-head">Daily Diet Break Down</span>
       <div class="grid-container">
-        <div class="grid-item1">Protiens</div>
+        <div class="grid-item1">Protiens (grams)</div>
         <div class="grid-item">
           <input type="text" class="txt-pd" readonly="readonly" id="pro" />
         </div>
-        <div class="grid-item1">Carbs</div>
+        <div class="grid-item1">Carbs (grams)</div>
         <div class="grid-item">
           <input type="text" class="txt-pd" readonly="readonly" id="carb" />
         </div>
-        <div class="grid-item1">Fats</div>
+        <div class="grid-item1">Fats (grams)</div>
         <div class="grid-item">
           <input type="text" class="txt-pd" readonly="readonly" id="fat" />
         </div>
@@ -137,6 +158,299 @@
           <input type="text" class="txt-pd" readonly="readonly" id="bpmm" />
         </div>
       </div>
+      <div id="sub-head">Exercises</div>
+      <br />
+      <div class="result">
+        To burn 250 calories. Perform one of these listed exercises for the
+        minutes specified.
+      </div>
+      <div class="result">
+        <table style="text-align: right">
+          <tr style="text-align: center; font-style: italic">
+            <th>Exercise Name</th>
+            <th></th>
+            <th>Minutes</th>
+          </tr>
+          <tr>
+            <td>Aerobics, Step: high impact</td>
+            <td></td>
+            <td>63</td>
+          </tr>
+          <tr>
+            <td>Aerobics, Step: low impact</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Aerobics: high impact</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Aerobics: low impact</td>
+            <td></td>
+            <td>114</td>
+          </tr>
+          <tr>
+            <td>Aerobics: water</td>
+            <td></td>
+            <td>156</td>
+          </tr>
+          <tr>
+            <td>Basketball: playing a game</td>
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Basketball: wheelchair</td>
+            <td></td>
+            <td>96</td>
+          </tr>
+          <tr>
+            <td>Bicycling, Stationary: moderate</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Bicycling, Stationary: vigorous</td>
+            <td></td>
+            <td>60</td>
+          </tr>
+          <tr>
+            <td>Bicycling: 12-13.9 mph</td>
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Bicycling: 14-15.9 mph</td>
+            <td></td>
+            <td>63</td>
+          </tr>
+          <tr>
+            <td>Bicycling: BMX or mountain</td>
+            <td></td>
+            <td>74</td>
+          </tr>
+          <tr>
+            <td>Boxing: sparring</td>
+            <td></td>
+            <td>69</td>
+          </tr>
+          <tr>
+            <td>Circuit Training: general</td>
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Football: touch, flag, general</td>
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Frisbee</td>
+            <td></td>
+            <td>208</td>
+          </tr>
+          <tr>
+            <td>Gymnastics: general</td>
+            <td></td>
+            <td>156</td>
+          </tr>
+          <tr>
+            <td>Handball: general</td>
+            <td></td>
+            <td>52</td>
+          </tr>
+          <tr>
+            <td>Hiking: cross-country</td>
+            <td></td>
+            <td>104</td>
+          </tr>
+          <tr>
+            <td>Jumping Rope</td>
+            <td></td>
+            <td>63</td>
+          </tr>
+          <tr>
+            <td>Racquetball: casual, general</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Racquetball: competitive</td>
+            <td></td>
+            <td>63</td>
+          </tr>
+          <tr>
+            <td>Rollerblade (inline) Skating</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Rowing, Stationary: moderate</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Rowing, Stationary: vigorous</td>
+            <td></td>
+            <td>74</td>
+          </tr>
+          <tr>
+            <td>Running: 10 mph (6 min/mile)</td>
+            <td></td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>Running: 5 mph (12 min/mile)</td>
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Running: 5.2 mph (11.5 min/mile)</td>
+            <td></td>
+            <td>69</td>
+          </tr>
+          <tr>
+            <td>Running: 6 mph (10 min/mile)</td>
+            <td></td>
+            <td>63</td>
+          </tr>
+          <tr>
+            <td>Running: 6.7 mph (9 min/mile)</td>
+            <td></td>
+            <td>57</td>
+          </tr>
+          <tr>
+            <td>Running: 7.5 mph (8 min/mile)</td>
+            <td></td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>Running: 8.6 mph (7 min/mile)</td>
+            <td></td>
+            <td>43</td>
+          </tr>
+          <tr>
+            <td>Running: cross-country</td>
+            <td></td>
+            <td>69</td>
+          </tr>
+          <tr>
+            <td>Running: pushing wheelchair, marathon wheeling</td>
+
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Stair Step Machine: general 104</td>
+            <td></td>
+            <td>104</td>
+          </tr>
+          <tr>
+            <td>Swimming: general</td>
+            <td></td>
+            <td>104</td>
+          </tr>
+          <tr>
+            <td>Tennis: general</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Volleyball: beach</td>
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Volleyball: competitive, gymnasium play</td>
+            <td></td>
+            <td>156</td>
+          </tr>
+          <tr>
+            <td>Volleyball: non-competitive, general play</td>
+            <td></td>
+            <td>208</td>
+          </tr>
+          <tr>
+            <td>Walk/Jog: jog less than 10 min.</td>
+            <td></td>
+            <td>104</td>
+          </tr>
+          <tr>
+            <td>Walk: 3.5 mph (17 min/mile)</td>
+            <td></td>
+            <td>156</td>
+          </tr>
+          <tr>
+            <td>Walk: 4 mph (15 min/mile)</td>
+            <td></td>
+            <td>139</td>
+          </tr>
+          <tr>
+            <td>Walk: 4.5 mph (13 min/mile)</td>
+            <td></td>
+            <td>125</td>
+          </tr>
+          <tr>
+            <td>Water Polo</td>
+            <td></td>
+            <td>104</td>
+          </tr>
+          <tr>
+            <td>Water Skiing</td>
+            <td></td>
+            <td>104</td>
+          </tr>
+          <tr>
+            <td>Weight Lifting: genera</td>
+            <td></td>
+            <td>208</td>
+          </tr>
+          <tr>
+            <td>Weight Lifting: vigorous</td>
+            <td></td>
+            <td>104</td>
+          </tr>
+          <tr>
+            <td>Whitewater: rafting, kayaking</td>
+            <td></td>
+            <td>89</td>
+          </tr>
+          <tr>
+            <td>Softball: general play</td>
+            <td></td>
+            <td>125</td>
+          </tr>
+          <tr>
+            <td>Rock Climbing: ascending</td>
+            <td></td>
+            <td>57</td>
+          </tr>
+          <tr>
+            <td>Rock Climbing: rapelling</td>
+            <td></td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>Golf: carrying clubs</td>
+            <td></td>
+            <td>114</td>
+          </tr>
+          <tr>
+            <td>Golf: using cart</td>
+            <td></td>
+            <td>179</td>
+          </tr>
+          <tr>
+            <td>Martial Arts: general</td>
+            <td></td>
+            <td>63</td>
+          </tr>
+        </table>
+      </div>
     </form>
+
+    <div class="footer"><span>&copy;</span>2021 Reps.com</div>
   </body>
 </html>

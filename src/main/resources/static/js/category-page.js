@@ -21,7 +21,7 @@ function renderCategory(categories, container) {
             <span class="text font1" class="text"> 
                 <a href="all-ques-of-category.html" id="${cat.categoryID}">${cat.categoryName}</a>
             </span>
-            <img src="../img/yoga.png">
+            <img src="https://source.unsplash.com/1600x900/?health">
         </div>`;
     container.innerHTML += category;
   });

@@ -13,7 +13,7 @@ function renderQuestions(questions) {
   questions.forEach((q) => {
     let question = `<div class="home-article">
         <div class="home-article-img">
-          <img src="../img/11.svg" alt="" />
+          <img src="https://source.unsplash.com/1600x900/?health" alt="" />
         </div>
 
         <div class="home-article-content font1">

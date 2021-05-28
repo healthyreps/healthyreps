@@ -151,7 +151,7 @@
 
 .content::after {
   content: "";
-  background-image: url("../img/11.svg");
+  background-image: url("https://source.unsplash.com/1600x900/?health");
   position: absolute;
   width: 100%;
   height: inherit;
