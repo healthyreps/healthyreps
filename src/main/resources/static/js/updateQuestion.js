@@ -10,5 +10,5 @@ async function updateQuestion(e) {
 
   console.log(localStorage.getItem("operationQuestion"));
 
-  window.location.href = "/src/main/resources/static/html/newQuestion.html";
+  window.location.href = "newQuestion.html";
 }

@@ -43,7 +43,7 @@ async function handleForm(e) {
 
   localStorage.removeItem("answerOperation");
   localStorage.removeItem("answerId");
-  window.location.href = "/src/main/resources/static/html/QandA.html";
+  window.location.href = "QandA.html";
 }
 
 async function populateAnswer() {
