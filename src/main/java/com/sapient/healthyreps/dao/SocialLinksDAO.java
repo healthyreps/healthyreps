@@ -6,12 +6,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.sapient.healthyreps.entity.SocialLinks;
 import com.sapient.healthyreps.exception.InvalidId;
 import com.sapient.healthyreps.interfaces.ISocialLinksDAO;
 import com.sapient.healthyreps.utils.DbConnect;
-
-import org.springframework.stereotype.Service;
 
 @Service
 public class SocialLinksDAO implements ISocialLinksDAO {

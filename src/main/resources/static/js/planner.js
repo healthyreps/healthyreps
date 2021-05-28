@@ -1,4 +1,3 @@
-
 function addPlanner() {
   document.getElementById("addData").style.display = "block";
 }
@@ -77,5 +76,5 @@ function getPlanner() {
       targ.innerHTML = resp.target;
       diet.innerHTML = resp.diet_goal;
     })
-    .catch( err => console.log(err));
+    .catch((err) => console.log(err));
 }

@@ -392,7 +392,7 @@ public class QuestionDAO implements IQuestionDAO {
 			ps.setInt(4, question.getCategoryID());
 			ps.setString(5, question.getImageLink());
 			ps.setInt(7, question_id);
-            ps.setInt(6, question.getVotes());
+			ps.setInt(6, question.getVotes());
 			return ps.executeUpdate() > 0;
 		} catch (SQLException e) {
 			e.printStackTrace();
