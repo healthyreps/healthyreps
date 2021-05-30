@@ -19,7 +19,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-  margin-bottom: 12px;
+  margin-top: 12px; 
   padding: 9px;
   background-color: rgba(230, 212, 230, 0.1);
 }
@@ -46,9 +46,6 @@ img {
   font-weight: bolder;
 }
 
-.footer {
-  background-color: #b4cded;
-}
 
 @media screen and (max-width: 900px) {
   .category-content {

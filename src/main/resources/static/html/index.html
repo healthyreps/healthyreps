@@ -12,13 +12,59 @@
   </head>
   <body>
     <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
+    <!-- <div id="nav-placeholder"></div>
     <script>
       $(function () {
         $("#nav-placeholder").load("nav.html");
       });
-    </script>
+    </script> -->
     <!--end of Navigation bar-->
+    <nav class="navigation max-width-full m-auto navbar">
+  <a class="logo" href="about.html"><span>Reps</span></a>
+  <div class="nav-left">
+    <ul class="navbar-links">
+      <li class="navbar-dropdown"><a href="about.html">About</a></li>
+      <li class="navbar-dropdown">
+        <a href="calculator.html">BMI Calculator</a>
+      </li>
+      <li class="navbar-dropdown">
+        <a href="category-page.html">Category</a>
+        <div class="dropdown">
+          <a href="post.html">Post</a> <a href="newQuestion.html">Question</a>
+        </div>
+      </li>
+      <li class="navbar-dropdown"><a href="planner.html">Planner</a></li>
+      <li class="navbar-dropdown">
+        <a href="post.html">Posts</a>
+        <div class="dropdown">
+          <a href="#">Latest Post</a> <a href="#">Top Posts</a>
+          <a href="#">Add New Post</a> <a href="#"></a> <a href="#"></a>
+        </div>
+      </li>
+      <li class="navbar-dropdown">
+        <a href="#">Questions</a>
+        <div class="dropdown">
+          <a href="#">Latest Questions</a> <a href="#">Top Questions</a>
+          <a href="newQuestion.html">Add New Question</a> <a href="#"></a>
+          <a href="#"></a> <a href="#"></a>
+        </div>
+      </li>
+      <li class="navbar-dropdown">
+        <a href="show-workout.html">Workout Timetable</a>
+        <div class="dropdown">
+          <a href="add-workout.html">Add New</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <form action="/search.html" method="get">
+      <input type="text" class="form-input" name="query" placeholder="Search" />
+      <button class="btn">Search</button>
+    </form>
+    <button class="btn" onclick="location.href='login.html'">Login</button>
+  </div>
+</nav>
 
     <div class="max-width-1 m-auto">
       <hr />
@@ -42,7 +88,7 @@
       </div>
       <div class="content-right">
         <img
-          src="https://images.unsplash.com/photo-1562490169-43e4c30ee6a9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjIyMjIxODMz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600"
+          src="http://images.unsplash.com/photo-1562490169-43e4c30ee6a9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjIyMjIxODMz&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600"
           alt=""
         />
       </div>
@@ -58,7 +104,7 @@
       </div>
       <h2>Featured Questions</h2>
 
-      <!-- Container fo questions  -->
+      <!-- Container of questions  -->
       <div class="question-container"></div>
     </div>
 

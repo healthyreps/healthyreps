@@ -72,7 +72,7 @@ downvotePost.addEventListener("click", (e)=>{
 function fetchAllData(){
     // fetch the post
     // TO DO: ADD AUTHOR DETAILS FROM USER TABLE
-    fetch('https://localhost:8080/post/' + postId)
+    fetch('http://localhost:8080/post/' + postId)
     .then(res => res.json())
     .then(json => {
         console.log(json);
@@ -89,7 +89,7 @@ function fetchAllData(){
     });
 
     // fetch all comments for this post
-    fetch('https://localhost:8080/CommentsPost/post/' + postId)
+    fetch('http://localhost:8080/CommentsPost/post/' + postId)
     .then(res => res.json())
     .then(json => {
         console.log(json)
@@ -124,7 +124,7 @@ function fetchAllData(){
             createComment.appendChild(createCommentContent);
             createComment.appendChild(createCommentRight);
 
-            createCommentImg.innerHTML = "<img src=\"https://source.unsplash.com/1600x900/?health" alt=\"Avatar\">" + json[i].userId;
+            createCommentImg.innerHTML = "<img src=\"http://source.unsplash.com/1600x900/?health"; alt="Avatar\">" + json[i].userId;
             createCommentContent.appendChild(createCommentText);
             createCommentText.innerHTML = json[i].content;
 

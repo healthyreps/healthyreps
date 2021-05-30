@@ -27,10 +27,10 @@ async function handleForm(e) {
   let method = "";
   if (localStorage.getItem("answerOperation") === "update") {
     let aid = localStorage.getItem("answerId");
-    url = `https://localhost:8080/api/question/${qid}/answer/${aid}`;
+    url = `http://localhost:8080/api/question/${qid}/answer/${aid}`;
     method = "PUT";
   } else {
-    url = `https://localhost:8080/api/question/${qid}/answer`;
+    url = `http://localhost:8080/api/question/${qid}/answer`;
     method = "POST";
   }
   await fetch(url, {
@@ -50,7 +50,7 @@ async function populateAnswer() {
   if (localStorage.getItem("answerOperation") === "update") {
     let aid = localStorage.getItem("answerId");
     let ans = await fetch(
-      `https://localhost:8080/api/question/1/answer/${aid}`
+      `http://localhost:8080/api/question/1/answer/${aid}`
     );
     ans = await ans.json();
 

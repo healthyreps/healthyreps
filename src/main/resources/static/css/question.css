@@ -10,7 +10,7 @@
 
 .question-content::after {
   content: "";
-  background-image: url("https://source.unsplash.com/1600x900/?health");
+  background-image: url("http://source.unsplash.com/1600x900/?health");
   position: absolute;
   top: 0;
   width: 100%;

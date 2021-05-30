@@ -9,7 +9,7 @@ const setClassByAttribute = (className, innerHtmlValue) => {
 
 const getUserRegister = () => {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://localhost:8080/api/register/" + userId);
+  xhr.open("GET", "http://localhost:8080/api/register/" + userId);
 
   xhr.onload = () => {
     let jsonObj = JSON.parse(xhr.responseText);
@@ -29,7 +29,7 @@ const getUserProfile = () => {
   const xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://localhost:8080/api/user/sociallinks/" + userId
+    "http://localhost:8080/api/user/sociallinks/" + userId
   );
 
   xhr.onload = () => {
@@ -52,7 +52,7 @@ const getUserGallery = () => {
   const xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://localhost:8080/api/user/gallery/" + userId
+    "http://localhost:8080/api/user/gallery/" + userId
   );
 
   xhr.onload = () => {

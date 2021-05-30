@@ -13,24 +13,80 @@
   </head>
   <body>
     <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
+    <!-- <div id="nav-placeholder"></div>
     <script>
       $(function () {
         $("#nav-placeholder").load("nav.html");
       });
-    </script>
+    </script> -->
     <!--end of Navigation bar-->
+    <nav class="navigation max-width-full m-auto navbar">
+  <a class="logo" href="about.html"><span>Reps</span></a>
+  <div class="nav-left">
+    <ul class="navbar-links">
+      <li class="navbar-dropdown"><a href="about.html">About</a></li>
+      <li class="navbar-dropdown">
+        <a href="calculator.html">BMI Calculator</a>
+      </li>
+      <li class="navbar-dropdown">
+        <a href="category-page.html">Category</a>
+        <div class="dropdown">
+          <a href="post.html">Post</a> <a href="newQuestion.html">Question</a>
+        </div>
+      </li>
+      <li class="navbar-dropdown"><a href="planner.html">Planner</a></li>
+      <li class="navbar-dropdown">
+        <a href="post.html">Posts</a>
+        <div class="dropdown">
+          <a href="#">Latest Post</a> <a href="#">Top Posts</a>
+          <a href="#">Add New Post</a> <a href="#"></a> <a href="#"></a>
+        </div>
+      </li>
+      <li class="navbar-dropdown">
+        <a href="#">Questions</a>
+        <div class="dropdown">
+          <a href="#">Latest Questions</a> <a href="#">Top Questions</a>
+          <a href="newQuestion.html">Add New Question</a> <a href="#"></a>
+          <a href="#"></a> <a href="#"></a>
+        </div>
+      </li>
+      <li class="navbar-dropdown">
+        <a href="show-workout.html">Workout Timetable</a>
+        <div class="dropdown">
+          <a href="add-workout.html">Add New</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <form action="/search.html" method="get">
+      <input type="text" class="form-input" name="query" placeholder="Search" />
+      <button class="btn">Search</button>
+    </form>
+    <button class="btn" onclick="location.href='login.html'">Login</button>
+  </div>
+</nav>
 
     <div class="label max-width-1 m-auto">
       <div class="font2" id="cname">Category Name</div>
       <div class="font2">
         Sort By
-        <button class="btn">votes</button>
-        <button class="btn">Date</button>
+        <button class="btn votes">Votes</button>
+        <button class="btn date">Date</button>
       </div>
     </div>
 
-    <div class="category-content max-width-1 m-auto"></div>
+    <!-- <div class="category-content max-width-1 m-auto"></div> -->
+    <div class="home-articles max-width-1 m-auto font2 my-2">
+      <div class="year-box">
+        <h3>Sort By</h3>
+        
+      </div>
+      <h2>Featured Questions</h2>
+
+      <!-- Container of questions  -->
+      <div class="question-container"></div>
+    </div>
 
     <div class="footer"><span class="text">&copy;</span>2021 Reps.com</div>
   </body>

@@ -7,17 +7,63 @@
     <title>Planner</title>
     <link rel="stylesheet" href="../css/utils.css" />
     <link rel="stylesheet" href="../css/planner.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body class="col-12 col-s-12">
-    <!--Navigation bar-->
-	<div id="nav-placeholder"></div>
+    <!-- Navigation bar-->
+	<!-- <div id="nav-placeholder"></div>
 	<script>
       $(function () {
-        $("#nav-placeholder").load("html/nav.html");
+        $("#nav-placeholder").load("nav.html");
       });
-    </script>
-	<!--end of Navigation bar-->
+    </script> -->
+	<!--end of Navigation bar -->
+  <nav class="navigation max-width-full m-auto navbar">
+    <a class="logo" href="about.html"><span>Reps</span></a>
+    <div class="nav-left">
+      <ul class="navbar-links">
+        <li class="navbar-dropdown"><a href="about.html">About</a></li>
+        <li class="navbar-dropdown">
+          <a href="calculator.html">BMI Calculator</a>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="category-page.html">Category</a>
+          <div class="dropdown">
+            <a href="post.html">Post</a> <a href="newQuestion.html">Question</a>
+          </div>
+        </li>
+        <li class="navbar-dropdown"><a href="planner.html">Planner</a></li>
+        <li class="navbar-dropdown">
+          <a href="post.html">Posts</a>
+          <div class="dropdown">
+            <a href="#">Latest Post</a> <a href="#">Top Posts</a>
+            <a href="#">Add New Post</a> <a href="#"></a> <a href="#"></a>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="#">Questions</a>
+          <div class="dropdown">
+            <a href="#">Latest Questions</a> <a href="#">Top Questions</a>
+            <a href="newQuestion.html">Add New Question</a> <a href="#"></a>
+            <a href="#"></a> <a href="#"></a>
+          </div>
+        </li>
+        <li class="navbar-dropdown">
+          <a href="show-workout.html">Workout Timetable</a>
+          <div class="dropdown">
+            <a href="add-workout.html">Add New</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <form action="/search.html" method="get">
+        <input type="text" class="form-input" name="query" placeholder="Search" />
+        <button class="btn">Search</button>
+      </form>
+      <button class="btn" onclick="location.href='login.html'">Login</button>
+    </div>
+  </nav>
       <div class="col-12 col-s-12">
         <form class="displayForm col-3 col-s-1">
             <ul>

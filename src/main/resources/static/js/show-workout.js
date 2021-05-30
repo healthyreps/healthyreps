@@ -2,7 +2,7 @@ function fnGetUser() {
   let userId = document.querySelector("#user-id").value;
   console.log(userId);
 
-  fetch("https://localhost:8080/api/workout/" + user_id)
+  fetch("http://localhost:8080/api/workout/" + user_id)
     .then((resp) => resp.json())
     .then((resp) => {
       document.getElementById("sets").innerHTML = resp.sets;

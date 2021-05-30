@@ -12,7 +12,7 @@ function addPlannerUtil() {
   obj.diet_goal = document.getElementById("dietGoalId").value;
   if (formValidation(obj)) {
     console.log(obj);
-    fetch("https://localhost:8080/api/planner/", {
+    fetch("http://localhost:8080/api/planner/", {
       method: "POST",
       body: JSON.stringify(obj),
       headers: {
@@ -67,7 +67,7 @@ function getPlanner() {
   var exce = row.insertCell(2);
   var targ = row.insertCell(3);
   var diet = row.insertCell(4);
-  fetch("https://localhost:8080/api/planner/" + userId)
+  fetch("http://localhost:8080/api/planner/" + userId)
     .then((resp) => resp.json())
     .then((resp) => {
       date.innerHTML = resp.date;

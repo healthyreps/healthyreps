@@ -137,7 +137,7 @@
 .navigation {
   font-family: var(--font1);
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -151,7 +151,7 @@
 
 .content::after {
   content: "";
-  background-image: url("https://source.unsplash.com/1600x900/?health");
+  background-image: url("http://source.unsplash.com/1600x900/?health");
   position: absolute;
   width: 100%;
   height: inherit;
@@ -180,6 +180,7 @@
   justify-content: center;
   align-items: center;
   color: black;
+  margin-top: 20px;
 }
 
 .nav-left {
@@ -208,6 +209,10 @@
 .nav-left ul li a {
   text-decoration: none;
   color: black;
+}
+
+.nav-right form{
+  display: inline;
 }
 
 .logo {

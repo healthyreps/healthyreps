@@ -8,7 +8,7 @@ console.log("index.js connected!! by shivam");
 
 async function getAllCategory() {
   let categories = await fetch(
-    "https://localhost:8080/api/category"
+    "http://localhost:8080/api/category"
   );
   let container = document.querySelector(".category-content");
   container.innerHTML = "";
@@ -23,7 +23,7 @@ function renderCategory(categories, container) {
             <span class="text font1" class="text"> 
                 <a href="all-ques-of-category.html" id="${cat.categoryID}">${cat.categoryName}</a>
             </span>
-            <img src="https://source.unsplash.com/1600x900/?health">
+            <img src="http://source.unsplash.com/1600x900/?health">
         </div>`;
     container.innerHTML += category;
   });
