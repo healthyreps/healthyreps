@@ -1,7 +1,7 @@
 async function getAllQuestions() {
   let category_id = localStorage.getItem("category_id");
   let questions = await fetch(
-    "https://healthyreps.herokuapp.com/api/category/" +
+    "https://localhost:8080/api/category/" +
       category_id +
       "/questions"
   );

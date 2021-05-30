@@ -2,6 +2,7 @@ package com.sapient.healthyreps.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import com.sapient.healthyreps.entity.CommentsPost;
 import com.sapient.healthyreps.exception.InvalidId;
 import com.sapient.healthyreps.interfaces.ICommentsPostDAO;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/CommentsPost")
 public class CommentsPostController {

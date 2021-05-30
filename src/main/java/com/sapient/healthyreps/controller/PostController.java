@@ -2,6 +2,7 @@ package com.sapient.healthyreps.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import com.sapient.healthyreps.dao.PostDAO;
 import com.sapient.healthyreps.entity.Post;
 import com.sapient.healthyreps.interfaces.IPostDAO;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/post")
 public class PostController {

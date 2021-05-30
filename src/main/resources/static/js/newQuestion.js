@@ -38,10 +38,10 @@ async function handleFormData(e) {
   let methodUsed = "";
   if (localStorage.getItem("operationQuestion") === "updateQuestion") {
     const qid = localStorage.getItem("questionId");
-    url = `https://healthyreps.herokuapp.com/api/user/1/question-update/${qid}`;
+    url = `https://localhost:8080/api/user/1/question-update/${qid}`;
     methodUsed = "PUT";
   } else {
-    url = `https://healthyreps.herokuapp.com/api/user/${user}/question-post`;
+    url = `https://localhost:8080/api/user/${user}/question-post`;
     methodUsed = "POST";
   }
   await fetch(url, {
@@ -62,7 +62,7 @@ async function populateLists() {
   let categorySelect = document.querySelector("#category");
   console.log(categorySelect);
   let categoryList = await fetch(
-    "https://healthyreps.herokuapp.com/api/category"
+    "https://localhost:8080/api/category"
   );
   categoryList = await categoryList.json();
   console.log(categoryList);
@@ -80,7 +80,7 @@ async function populateLists() {
   if (localStorage.getItem("operationQuestion") === "updateQuestion") {
     const qid = localStorage.getItem("questionId");
     let question = await fetch(
-      `https://healthyreps.herokuapp.com/api/question/${qid}`
+      `https://localhost:8080/api/question/${qid}`
     );
     question = await question.json();
     console.log(question);
