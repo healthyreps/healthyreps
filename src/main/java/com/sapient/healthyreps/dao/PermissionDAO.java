@@ -16,7 +16,7 @@ public class PermissionDAO implements IPermissionDAO {
 	@Override
 	public boolean isIdPresent(int id, String tableName) throws InvalidId {
 
-		String sqlForException = "SELECT " + tableName + "_id FROM " + tableName + " WHERE " + tableName + "_id=?";
+		String sqlForException = "select " + tableName + "_id from " + tableName + " where " + tableName + "_id=?";
 		try {
 			PreparedStatement psException = DbConnect.getMySQLConn().prepareStatement(sqlForException);
 			psException.setInt(1, id);
@@ -35,7 +35,7 @@ public class PermissionDAO implements IPermissionDAO {
 	@Override
 	public int getLastID(String tableName) {
 
-		String sql = "SELECT " + tableName + "_id from " + tableName + " ORDER BY " + tableName + "_id DESC LIMIT 1";
+		String sql = "select " + tableName + "_id from " + tableName + " order by " + tableName + "_id DESC LIMIT 1";
 
 		try {
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);

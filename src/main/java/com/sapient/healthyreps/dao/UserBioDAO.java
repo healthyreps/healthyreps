@@ -20,7 +20,7 @@ public class UserBioDAO implements IUserBioDAO {
 
 		try {
 
-			String q = "insert into userbio values(?,?,?,?,?,?,?)";
+			String q = "insert into user_bio values(?,?,?,?,?,?,?)";
 
 			PreparedStatement pstmt = DbConnect.getMySQLConn().prepareStatement(q);
 
@@ -28,9 +28,9 @@ public class UserBioDAO implements IUserBioDAO {
 			pstmt.setInt(2, u.getHeight());
 			pstmt.setString(3, u.getGender());
 			pstmt.setInt(4, u.getWaist());
-			pstmt.setInt(5, u.getWorkout_plan_in_days());
+			pstmt.setInt(5, u.getWorkoutPlanInDays());
 			pstmt.setInt(6, u.getReputation());
-			pstmt.setInt(7, u.getUser_id());
+			pstmt.setInt(7, u.getUserId());
 
 			return pstmt.executeUpdate() > 0;
 
@@ -44,7 +44,7 @@ public class UserBioDAO implements IUserBioDAO {
 	public boolean deleteuserToDB(int user_id) {
 		try {
 
-			String q = "delete from userbio where userId=?";
+			String q = "delete from user_bio where user_id=?";
 
 			PreparedStatement pstmt = DbConnect.getMySQLConn().prepareStatement(q);
 			pstmt.setInt(1, user_id);
@@ -62,7 +62,7 @@ public class UserBioDAO implements IUserBioDAO {
 	public UserBio getHtandWt(int user_id) {
 		try {
 
-			String q = "select height,weight from userbio where userId=?";
+			String q = "select height,weight from user_bio where user_id=?";
 
 			PreparedStatement pstmt = DbConnect.getMySQLConn().prepareStatement(q);
 			pstmt.setInt(1, user_id);

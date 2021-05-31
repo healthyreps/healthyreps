@@ -2,33 +2,33 @@ package com.sapient.healthyreps.entity;
 
 public class Planner {
 
-	private int user_id;
+	private int userId;
 	private String timing;
-	private String exercise_perform;
+	private String exercisePerform;
 	private String target;
-	private String diet_goal;
+	private String dietGoal;
 	private String date;
 
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
 
 	public Planner() {
 
 	}
 
-	public Planner(int user_id, String timing, String exercise_perform, String target, String diet_goal, String date) {
+	public Planner(int userId, String timing, String exercisePerform, String target, String dietGoal, String date) {
 		super();
-		this.user_id = user_id;
+		this.userId = userId;
 		this.timing = timing;
-		this.exercise_perform = exercise_perform;
+		this.exercisePerform = exercisePerform;
 		this.target = target;
-		this.diet_goal = diet_goal;
+		this.dietGoal = dietGoal;
 		this.date = date;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public String getTiming() {
@@ -39,12 +39,12 @@ public class Planner {
 		this.timing = timing;
 	}
 
-	public String getExercise_perform() {
-		return exercise_perform;
+	public String getExercisePerform() {
+		return exercisePerform;
 	}
 
-	public void setExercise_perform(String exercise_perform) {
-		this.exercise_perform = exercise_perform;
+	public void setExercisePerform(String exercisePerform) {
+		this.exercisePerform = exercisePerform;
 	}
 
 	public String getTarget() {
@@ -55,12 +55,12 @@ public class Planner {
 		this.target = target;
 	}
 
-	public String getDiet_goal() {
-		return diet_goal;
+	public String getDietGoal() {
+		return dietGoal;
 	}
 
-	public void setDiet_goal(String diet_goal) {
-		this.diet_goal = diet_goal;
+	public void setDietGoal(String dietGoal) {
+		this.dietGoal = dietGoal;
 	}
 
 	public String getDate() {
@@ -73,8 +73,8 @@ public class Planner {
 
 	@Override
 	public String toString() {
-		return "Planner [user_id=" + user_id + ", timing=" + timing + ", exercise_perform=" + exercise_perform
-				+ ", target=" + target + ", diet_goal=" + diet_goal + ", date=" + date + "]";
+		return "Planner [userId=" + userId + ", timing=" + timing + ", exercisePerform=" + exercisePerform
+				+ ", target=" + target + ", dietGoal=" + dietGoal + ", date=" + date + "]";
 	}
 
 }

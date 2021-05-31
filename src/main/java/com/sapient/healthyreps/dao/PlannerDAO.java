@@ -17,11 +17,11 @@ public class PlannerDAO implements IPlannerDAO {
 		String q = "insert into planner values(?,?,?,?,?,?);";
 		try {
 			PreparedStatement prep = DbConnect.getMySQLConn().prepareStatement(q);
-			prep.setInt(1, planner.getUser_id());
+			prep.setInt(1, planner.getUserId());
 			prep.setString(2, planner.getTiming());
-			prep.setString(3, planner.getExercise_perform());
+			prep.setString(3, planner.getExercisePerform());
 			prep.setString(4, planner.getTarget());
-			prep.setString(5, planner.getDiet_goal());
+			prep.setString(5, planner.getDietGoal());
 			prep.setString(6, planner.getDate());
 			return prep.executeUpdate() > 0;
 		} catch (SQLException e) {
@@ -32,7 +32,7 @@ public class PlannerDAO implements IPlannerDAO {
 
 	@Override
 	public boolean deletePlanner(int user_id) {
-		String sql = "delete from planner where userId=?";
+		String sql = "delete from planner where user_id=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -49,7 +49,7 @@ public class PlannerDAO implements IPlannerDAO {
 	@Override
 	public Planner getPlanner(int user_id) {
 
-		String sql = "select * from planner where userId=?";
+		String sql = "select * from planner where user_id=?";
 		try {
 
 			PreparedStatement ps = DbConnect.getMySQLConn().prepareStatement(sql);
@@ -59,12 +59,12 @@ public class PlannerDAO implements IPlannerDAO {
 			rs.next();
 
 			Planner pl = new Planner();
-			pl.setUser_id(rs.getInt(1));
+			pl.setUserId(rs.getInt(1));
 			pl.setTiming(rs.getString(2));
-			pl.setExercise_perform(rs.getString(3));
+			pl.setExercisePerform(rs.getString(3));
 			pl.setTarget(rs.getString(4));
 			pl.setTarget(rs.getString(4));
-			pl.setDiet_goal(rs.getString(5));
+			pl.setDietGoal(rs.getString(5));
 			pl.setDate(rs.getString(6));
 
 			return pl;
@@ -77,7 +77,7 @@ public class PlannerDAO implements IPlannerDAO {
 
 	@Override
 	public boolean updateExercise_perform(String exercise_perform, int user_id) {
-		String q = "update planner set exercisePerform=?" + " where userId = ?;";
+		String q = "update planner set exercise_perform=?" + " where user_id = ?;";
 		try {
 			PreparedStatement prep = DbConnect.getMySQLConn().prepareStatement(q);
 			prep.setInt(2, user_id);
@@ -91,7 +91,7 @@ public class PlannerDAO implements IPlannerDAO {
 
 	@Override
 	public boolean updateDiet_goal(String diet_goal, int user_id) {
-		String q = "update planner set dietGoal=?" + " where userId = ?;";
+		String q = "update planner set diet_goal=?" + " where user_id = ?;";
 		try {
 			PreparedStatement prep = DbConnect.getMySQLConn().prepareStatement(q);
 			prep.setInt(2, user_id);

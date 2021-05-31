@@ -7,9 +7,9 @@ function addPlannerUtil() {
   obj.userId = parseInt(_userId);
   obj.date = document.getElementById("dateEntryId").value;
   obj.timing = document.getElementById("timeEntryId").value;
-  obj.exercise_perform = document.getElementById("exercisesPerformId").value;
+  obj.exercisePerform = document.getElementById("exercisesPerformId").value;
   obj.target = document.getElementById("exercisesTargetId").value;
-  obj.diet_goal = document.getElementById("dietGoalId").value;
+  obj.dietGoal = document.getElementById("dietGoalId").value;
   if (formValidation(obj)) {
     console.log(obj);
     fetch("http://localhost:8080/api/planner/", {
@@ -42,7 +42,7 @@ function formValidation(obj) {
     alert("Select the timing!");
     return false;
   }
-  if (obj.exercise_perform == "") {
+  if (obj.exercisePerform == "") {
     alert("Enter the excercise to be performed!");
     return false;
   }
@@ -50,7 +50,7 @@ function formValidation(obj) {
     alert("Enter excercise target!");
     return false;
   }
-  if (obj.diet_goal == "") {
+  if (obj.dietGoal == "") {
     alert("Enter the diet goal!");
     return false;
   }
@@ -61,20 +61,27 @@ function getPlanner() {
   let userId = document.querySelector("#user-id").value;
   console.log(userId);
   var table = document.getElementById("planner-table");
+  // console.log(table.children);
+  for(var i = 1;i<table.children[1].children.length;++i)
+  {
+      table.children[1].children[i].remove();
+  }
   var row = table.insertRow(table.rows.length);
   var date = row.insertCell(0);
   var time = row.insertCell(1);
   var exce = row.insertCell(2);
   var targ = row.insertCell(3);
   var diet = row.insertCell(4);
+
   fetch("http://localhost:8080/api/planner/" + userId)
     .then((resp) => resp.json())
     .then((resp) => {
+      console.log(resp);
       date.innerHTML = resp.date;
       time.innerHTML = resp.timing;
-      exce.innerHTML = resp.exercise_perform;
+      exce.innerHTML = resp.exercisePerform;
       targ.innerHTML = resp.target;
-      diet.innerHTML = resp.diet_goal;
+      diet.innerHTML = resp.dietGoal;
     })
     .catch((err) => console.log(err));
 }
